@@ -1,0 +1,7 @@
+*.tmproj
+.DS_Store
+x_notes
+.screenrc
+.rvmrc
+.project
+.vagrant

@@ -1,0 +1,30 @@
+[user]
+	name = Joel Chippindale
+	email = joel@joelchippindale.com
+[core]
+	excludesfile = ~/.gitignore
+	editor = mate -wl1
+[alias]
+  di = diff
+ 	co = checkout
+ 	ci = commit -v
+ 	br = branch
+	st = status
+	re = rebase
+ 	sta = stash
+ 	up = !thor git:update
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[merge]
+	tool = opendiff
+[color "interactive"]
+	prompt = magenta
+[push]
+	default = matching
+[github]
+	user = mocoso
+[branch]
+	autosetuprebase = always
