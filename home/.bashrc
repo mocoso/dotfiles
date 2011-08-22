@@ -1,7 +1,14 @@
 # Custom prompt
 # With git branch
 source ~/.git-completion.sh
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ ';
+
+
+# Lifted from http://railsdog.com/blog/2009/03/07/custom-bash-prompt-for-git-branches/
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+
+export PS1='\h:\W$(__git_ps1 "[\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]]")$ '
 # End custom prompt
 
 # Set textmate as default editor
