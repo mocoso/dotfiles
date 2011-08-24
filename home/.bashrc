@@ -17,6 +17,9 @@ export EDITOR=mate
 # Show all branches in gitx
 alias gitx="gitx --all"
 
+# Alias for .tmux-up.sh
+alias tup="./.tmux-up.sh"
+
 # Rails aliases
 alias cufa="bundle exec rake cucumber:fast"
 
