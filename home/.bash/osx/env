@@ -1,0 +1,3 @@
+# Set textmate as default editor
+export EDITOR=mate
+export GIT_EDITOR='mate -wl1'
