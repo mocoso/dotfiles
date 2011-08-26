@@ -29,6 +29,8 @@ function parse_git_dirty {
 export PS1='\h:\W$(__git_ps1 "[\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]]")$ '
 # End custom prompt
 
+alias la="ls -alG"
+
 # Alias for .tmux-up.sh
 alias tup="./.tmux-up.sh"
 
