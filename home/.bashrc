@@ -1,8 +1,8 @@
 case $OSTYPE in
   darwin*)
-	source "$HOME/.bash/osx/aliases"
-	source "$HOME/.bash/osx/completion"
-	source "$HOME/.bash/osx/env"
+	source "$HOME/.bash.d/osx/aliases"
+	source "$HOME/.bash.d/osx/completion"
+	source "$HOME/.bash.d/osx/env"
 
     # Open man page in textmate
     tman () {
@@ -10,7 +10,7 @@ case $OSTYPE in
     }
   ;;
   linux-gnu)
-	source "$HOME/.bash/linux/completion"
+	source "$HOME/.bash.d/linux/completion"
   ;;
 esac
 
