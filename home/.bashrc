@@ -34,6 +34,9 @@ alias la="ls -alG"
 # Alias for .tmux-up.sh
 alias tup="./.tmux-up.sh"
 
+# Alias for bundle exec
+alias be="bundle exec"
+
 # Rails aliases
 alias cufa="bundle exec rake cucumber:fast"
 
