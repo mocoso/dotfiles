@@ -11,6 +11,7 @@ case $OSTYPE in
   ;;
   linux-gnu)
 	source "$HOME/.bash.d/linux/completion"
+        source "$HOME/.bash.d/linux/vagrant"
   ;;
 esac
 
