@@ -1,3 +1,5 @@
+source "$HOME/.bash.d/aliases"
+
 case $OSTYPE in
   darwin*)
     source "$HOME/.bash.d/osx/aliases"
@@ -30,17 +32,6 @@ function parse_git_dirty {
 
 export PS1='\h:\W$(__git_ps1 "[\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]]")$ '
 # End custom prompt
-
-alias la="ls -alG"
-
-# Alias for .tmux-up.sh
-alias tup="./.tmux-up.sh"
-
-# Alias for bundle exec
-alias be="bundle exec"
-
-# Rails aliases
-alias cufa="bundle exec rake cucumber:fast"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
