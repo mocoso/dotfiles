@@ -8,3 +8,17 @@ alias be="bundle exec"
 
 # Rails aliases
 alias cufa="bundle exec rake cucumber:fast"
+ 
+# Bundler aliases from http://marc-bowes.com/2011/09/21/dry-your-bundle-exec-tears.html
+function run_bundler_cmd () {
+  if [ -r ./Gemfile ]; then
+    bundle exec $@
+  else
+    $@
+  fi
+}
+ 
+for cmd in rake spec rspec cucumber cap rails rackup
+do
+  alias $cmd="run_bundler_cmd $cmd"
+done
