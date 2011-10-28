@@ -1,29 +1,29 @@
 [user]
-	name = Joel Chippindale
-	email = joel@joelchippindale.com
+  name = Joel Chippindale
+  email = joel@joelchippindale.com
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 [alias]
   di = diff
- 	co = checkout
- 	ci = commit -v
- 	br = branch
-	st = status
-	re = rebase
- 	sta = stash
- 	up = !thor git:update
+  co = checkout
+  ci = commit -v
+  br = branch
+  st = status
+  re = rebase
+  sta = stash
+  up = !thor git:update
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [merge]
-	tool = opendiff
+  tool = opendiff
 [color "interactive"]
-	prompt = magenta
+  prompt = magenta
 [push]
-	default = matching
+  default = matching
 [github]
-	user = mocoso
+  user = mocoso
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
