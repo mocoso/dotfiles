@@ -2,4 +2,5 @@
 --type-set=scss=.scss
 --type-add=html=.haml,.erb
 --type-add=ruby=.haml,.prawn,.feature,.csvbuilder
+--type-set=puppet=.pp
 --type-add=yaml=.yml
