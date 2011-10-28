@@ -12,6 +12,7 @@
   re = rebase
   sta = stash
   up = !thor git:update
+  hist = log --pretty=format:\"%h %ad | %s%d\" --graph --date=short
 [color]
   diff = auto
   status = auto
