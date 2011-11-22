@@ -8,6 +8,9 @@ IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 require 'pp'
 
+# Put the current directory on the load path
+$LOAD_PATH << Dir.pwd.chomp
+
 class Object
   # list methods which aren't in superclass
   def local_methods(obj = self)
