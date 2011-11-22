@@ -2,4 +2,4 @@
 alias gitx="gitx --all"
 
 # Layout for coding
-alias lcode="rvm system exec thor desktop:split TextMate 3 iTerm 2"
+alias lcode="rvm system exec thor desktop:split TextMate 7 iTerm 4"
