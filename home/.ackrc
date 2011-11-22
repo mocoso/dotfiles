@@ -4,3 +4,5 @@
 --type-add=ruby=.haml,.prawn,.feature,.csvbuilder,.builder,.irbrc
 --type-set=puppet=.pp
 --type-add=yaml=.yml
+--type-set=plaintext=.md,.mdown,.markdown,.mkdn,.textile,.rst,.txt
+
