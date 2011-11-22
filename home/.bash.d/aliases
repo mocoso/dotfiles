@@ -18,7 +18,7 @@ function run_bundler_cmd () {
   fi
 }
  
-for cmd in rake spec rspec cucumber cap rails rackup
+for cmd in rake spec rspec cucumber cap rails rackup irb heroku
 do
   alias $cmd="run_bundler_cmd $cmd"
 done
