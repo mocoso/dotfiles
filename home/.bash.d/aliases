@@ -17,8 +17,10 @@ alias be="bundle exec"
 alias cufa="bundle exec rake cucumber:fast"
  
 # Bundler aliases from http://marc-bowes.com/2011/09/21/dry-your-bundle-exec-tears.html
+# with additional tweak so that it is not used if you have a ./bin directory (which is
+# taken to mean you have installed binstubs with bundler and want to use these instead)
 function run_bundler_cmd () {
-  if [ -r ./Gemfile ]; then
+  if [[ -r ./Gemfile && ! -d ./bin ]]; then
     bundle exec $@
   else
     $@

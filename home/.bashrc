@@ -1,4 +1,5 @@
 source "$HOME/.bash.d/aliases"
+source "$HOME/.bash.d/env"
 
 case $OSTYPE in
   darwin*)
