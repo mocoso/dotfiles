@@ -7,6 +7,7 @@ case $OSTYPE in
     source "$HOME/.bash.d/osx/aws"
     source "$HOME/.bash.d/osx/completion"
     source "$HOME/.bash.d/osx/env"
+    source "$HOME/.bash.d/osx/brew"
 
     # Open man page in textmate
     tman () {
