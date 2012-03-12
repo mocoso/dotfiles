@@ -28,3 +28,5 @@
   user = mocoso
 [branch]
   autosetuprebase = always
+[rebase]
+	autosquash = true
