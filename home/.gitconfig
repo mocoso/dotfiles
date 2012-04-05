@@ -20,6 +20,7 @@
   interactive = auto
 [merge]
   tool = opendiff
+  conflictstyle = diff3
 [color "interactive"]
   prompt = magenta
 [push]
