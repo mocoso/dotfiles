@@ -3,10 +3,9 @@
 --type=yaml
 --type=shell
 --type=js
+--type-add=css=.sass,.scss
 --type=html
 --type-add=ruby=.haml,.prawn,.feature,.csvbuilder,.builder,.irbrc,.lock
 --type-set=othertext=.md,.mdown,.markdown,.mkdn,.textile,.rst,.txt
---type-set=sass=.sass
---type-set=scss=.scss
 --type-set=puppet=.pp
 
