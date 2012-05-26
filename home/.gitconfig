@@ -9,7 +9,8 @@
   ci = commit -v
   br = branch
   st = status
-  re = rebase
+  rb = rebase
+  rs = reset
   sta = stash
   up = !thor git:update
   hist = log --pretty=format:\"%h %ad | %s%d\" --graph --date=short
