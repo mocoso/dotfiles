@@ -1,3 +1,4 @@
-# Set textmate as default editor
-export EDITOR='mate -w'
-export GIT_EDITOR='mate -wl1'
+# Set vim as default editor, however on OSX this appears to need to be the full
+# path although I am not sure why, the problem is described here
+# http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
+export GIT_EDITOR='/usr/bin/vim'
