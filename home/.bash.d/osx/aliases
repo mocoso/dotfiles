@@ -4,6 +4,19 @@ alias gitx="gitx --all"
 # Layout for coding
 alias lcode="rvm system exec thor desktop:split TextMate 7 iTerm 4"
 
+# Replace tmux with .tmux-up.sh if it exists for current folder and ensure we
+# use the OSX specific configuration, see
+# https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard/issues/8#issuecomment-4134987
+# for more details.
+function run_tmux_with_configuration_support () {
+  if [ -r ./.tmux-up.sh ]; then
+    ./.tmux-up.sh
+  else
+    tmux -f ~/.tmux-osx.conf
+  fi
+}
+alias tmux="run_tmux_with_configuration_support"
+
 # Hitch
 hitch() {
 command hitch "$@"

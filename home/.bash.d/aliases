@@ -1,15 +1,5 @@
 alias la="ls -alG"
 
-# Replace tmux with .tmux-up.sh if it exists for current folder
-function run_tmux_with_configuration_support () {
-  if [ -r ./.tmux-up.sh ]; then
-    ./.tmux-up.sh
-  else
-    tmux
-  fi
-}
-alias tmux="run_tmux_with_configuration_support"
-
 # Alias for bundle exec
 alias be="bundle exec"
 
