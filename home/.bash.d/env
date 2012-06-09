@@ -1,6 +1,3 @@
-# Use vim for editing
-EDITOR=vim
-
 # Add ./bin to path for bundler bin stub support
 PATH=$PATH:./bin
 
