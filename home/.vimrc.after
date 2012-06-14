@@ -1,7 +1,10 @@
 color vibrantink
 
 set colorcolumn=81
-set clipboard=unnamed
+
+if has('mac')
+  set clipboard=unnamed
+endif
 
 " Change the cursor to a vertical bar for insert mode
 " see http://code.google.com/p/iterm2/wiki/ProprietaryEscapeCodes for more
