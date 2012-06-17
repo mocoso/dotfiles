@@ -2,3 +2,5 @@ let mapleader = ","
 
 let g:Powerline_symbols = 'fancy'
 
+call janus#disable_plugin('ack')
+
