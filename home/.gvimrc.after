@@ -1,7 +1,1 @@
-color vibrantink
-set colorcolumn=81
-
-if has('mac')
-  set clipboard=unnamed
-endif
 
