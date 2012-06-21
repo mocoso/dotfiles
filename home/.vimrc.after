@@ -32,3 +32,6 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
+" Making it so ; works like : for commands.
+nnoremap ; :
+
