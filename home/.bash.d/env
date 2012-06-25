@@ -1,6 +1,6 @@
 # Add ./bin to path for bundler bin stub support
-PATH=$PATH:./bin
+export PATH=$PATH:./bin
 
 # Ignore duplicates and those commands prefixed with a space
-HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth
 
