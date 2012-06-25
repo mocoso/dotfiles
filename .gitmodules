@@ -4,3 +4,6 @@
 [submodule "home/.janus/vim-qargs"]
 	path = home/.janus/vim-qargs
 	url = https://github.com/henrik/vim-qargs.git
+[submodule "home/.janus/vim-rails"]
+	path = home/.janus/vim-rails
+	url = https://github.com/tpope/vim-rails.git
