@@ -35,3 +35,6 @@ map <Down> <Nop>
 " Making it so ; works like : for commands.
 nnoremap ; :
 
+" Highlight current line
+set cursorline
+
