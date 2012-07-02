@@ -5,4 +5,5 @@ let g:Powerline_symbols = 'fancy'
 call janus#disable_plugin('ack')
 call janus#disable_plugin('snipmate')
 call janus#disable_plugin('nerdtree')
+call janus#disable_plugin('nerdcommenter')
 

@@ -7,3 +7,6 @@
 [submodule "home/.janus/vim-rails"]
 	path = home/.janus/vim-rails
 	url = https://github.com/tpope/vim-rails.git
+[submodule "home/.janus/vim-commentary"]
+	path = home/.janus/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
