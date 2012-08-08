@@ -1,7 +1,7 @@
 # Set vim as default editor, however on OSX this appears to need to be the full
 # path although I am not sure why, the problem is described here
 # http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
-export EDITOR='/usr/bin/vim'
+export EDITOR='vim'
 
-export GIT_EDITOR='/usr/bin/vim -f'
+export GIT_EDITOR='vim -f'
 
