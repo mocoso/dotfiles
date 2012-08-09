@@ -10,3 +10,6 @@
 [submodule "home/.janus/vim-commentary"]
 	path = home/.janus/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "home/.janus/vim-markdown-preview"]
+	path = home/.janus/vim-markdown-preview
+	url = git://github.com/nelstrom/vim-markdown-preview.git
