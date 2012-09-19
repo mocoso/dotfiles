@@ -9,7 +9,7 @@ function run_tmux_with_configuration_support () {
   if [ -r ./.tmux-up.sh ]; then
     ./.tmux-up.sh
   else
-    tmux -f ~/.tmux-osx.conf
+    tmux
   fi
 }
 alias tmux="run_tmux_with_configuration_support"
