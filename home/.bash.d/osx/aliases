@@ -1,9 +1,6 @@
 # Show all branches in gitx
 alias gitx="gitx --all"
 
-# Layout for coding
-alias lcode="rvm system exec thor desktop:split TextMate 7 iTerm 4"
-
 # Replace tmux with .tmux-up.sh if it exists for current folder and ensure we
 # use the OSX specific configuration, see
 # https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard/issues/8#issuecomment-4134987
