@@ -15,3 +15,7 @@ compinit
 # for config_file ($ZSH/**/completion.zsh) source $config_file
 
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Entering the name of a directory (if it's not a command) will automatically
+# cd to that directory.
+setopt autocd
