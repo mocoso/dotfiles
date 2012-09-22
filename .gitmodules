@@ -13,3 +13,6 @@
 [submodule "home/.janus/vim-markdown-preview"]
 	path = home/.janus/vim-markdown-preview
 	url = git://github.com/nelstrom/vim-markdown-preview.git
+[submodule "home/.zsh.d/zsh-syntax-highlighting"]
+	path = home/.zsh.d/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
