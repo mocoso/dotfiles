@@ -13,3 +13,5 @@ compinit
 
 # load every completion after autocomplete loads
 # for config_file ($ZSH/**/completion.zsh) source $config_file
+
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
