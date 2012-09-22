@@ -5,6 +5,6 @@ x_notes
 .rvmrc
 .project
 .vagrant
-.tmux-up.sh
+.tmux-up.*
 .rbenv-gemsets
 .rbenv-version
