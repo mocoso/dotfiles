@@ -16,3 +16,6 @@
 [submodule "home/.zsh.d/zsh-syntax-highlighting"]
 	path = home/.zsh.d/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "home/.zsh.d/zsh-history-substring-search"]
+	path = home/.zsh.d/zsh-history-substring-search
+	url = git://github.com/zsh-users/zsh-history-substring-search.git
