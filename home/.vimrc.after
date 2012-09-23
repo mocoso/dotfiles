@@ -41,3 +41,5 @@ set cursorline
 " Underline highlighted terms to make the highlight less jarring
 highlight Search ctermfg=white ctermbg=black cterm=underline
 
+" Add fish syntax
+au BufRead,BufNewFile *.fish setfiletype fish

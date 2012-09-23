@@ -19,3 +19,6 @@
 [submodule "home/.zsh.d/zsh-history-substring-search"]
 	path = home/.zsh.d/zsh-history-substring-search
 	url = git://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "home/.janus/fish"]
+	path = home/.janus/fish
+	url = git://github.com/vim-scripts/fish.vim.git
