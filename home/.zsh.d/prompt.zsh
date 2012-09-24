@@ -14,7 +14,7 @@ prompt_user_and_host() {
   if [ -n "$SSH_CLIENT" ]; then
     echo "%{$fg[cyan]%}%n@%m:"
   else
-    echo "%{$fg[magenta]%}%m:"
+    echo "%{$FG[098]%}%m:"
   fi
 }
 
