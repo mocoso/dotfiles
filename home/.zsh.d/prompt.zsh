@@ -1,10 +1,12 @@
 autoload colors && colors
 
-git_pair_for_prompt() {
-  source ~/.hitch_export_authors
-  if [ `git symbolic-ref HEAD 2> /dev/null` ] \
-    && [ -n "${GIT_AUTHOR_EMAIL:+1}" ]; then
-    echo $GIT_AUTHOR_EMAIL|awk -F "[+@]" '{ print "("$2"+"$3")" }'
+prompt_git_pair() {
+  if [ -f ~/.hitch_export_authors ]; then
+    source ~/.hitch_export_authors
+    if [ `git symbolic-ref HEAD 2> /dev/null` ] \
+      && [ -n "${GIT_AUTHOR_EMAIL:+1}" ]; then
+      echo $GIT_AUTHOR_EMAIL|awk -F "[+@]" '{ print "("$2"+"$3")" }'
+    fi
   fi
 }
 
@@ -22,7 +24,7 @@ precmd() {
 }
 
 setopt prompt_subst
-export PROMPT='%{$fg[cyan]%}%n@%m:%{$fg[white]%}%c${vcs_info_msg_0_}%{$reset_color%} $ '
+export PROMPT='%{$fg[cyan]%}%n@%m:%{$fg[white]%}%c${vcs_info_msg_0_}%{$reset_color%}% $(prompt_git_pair) $ '
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 export RPROMPT="${return_code}"
