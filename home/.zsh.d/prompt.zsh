@@ -10,6 +10,14 @@ prompt_git_pair() {
   fi
 }
 
+prompt_user_and_host() {
+  if [ -n "$SSH_CLIENT" ]; then
+    echo "%{$fg[cyan]%}%n@%m:"
+  else
+    echo "%{$fg[magenta]%}%m:"
+  fi
+}
+
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' enable git svn
@@ -24,7 +32,7 @@ precmd() {
 }
 
 setopt prompt_subst
-export PROMPT='%{$fg[cyan]%}%n@%m:%{$fg[white]%}%c${vcs_info_msg_0_}%{$reset_color%}% $(prompt_git_pair) $ '
+export PROMPT='$(prompt_user_and_host)%{$fg[white]%}%c${vcs_info_msg_0_}%{$reset_color%}% $(prompt_git_pair) $ '
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 export RPROMPT="${return_code}"
