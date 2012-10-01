@@ -1,18 +1,3 @@
-[submodule "home/.janus/vim-powerline"]
-	path = home/.janus/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "home/.janus/vim-qargs"]
-	path = home/.janus/vim-qargs
-	url = https://github.com/henrik/vim-qargs.git
-[submodule "home/.janus/vim-rails"]
-	path = home/.janus/vim-rails
-	url = https://github.com/tpope/vim-rails.git
-[submodule "home/.janus/vim-commentary"]
-	path = home/.janus/vim-commentary
-	url = git://github.com/tpope/vim-commentary.git
-[submodule "home/.janus/vim-markdown-preview"]
-	path = home/.janus/vim-markdown-preview
-	url = git://github.com/nelstrom/vim-markdown-preview.git
 [submodule "home/.zsh.d/zsh-syntax-highlighting"]
 	path = home/.zsh.d/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
