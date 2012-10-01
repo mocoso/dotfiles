@@ -5,6 +5,8 @@ let mapleader = ","
 " Powerline plugin
 let g:Powerline_symbols = 'fancy'
 
+set laststatus=2  " always show the status bar
+
 " Ctrl-P plugin
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$',
