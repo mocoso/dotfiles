@@ -1,3 +1,7 @@
+let mapleader = ","
+
+let g:Powerline_symbols = 'fancy'
+
 color vibrantink
 
 set colorcolumn=81
