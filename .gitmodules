@@ -28,3 +28,6 @@
 [submodule "home/.vim/bundle/vim-markdown-preview"]
 	path = home/.vim/bundle/vim-markdown-preview
 	url = git://github.com/nelstrom/vim-markdown-preview.git
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
