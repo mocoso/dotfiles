@@ -2,7 +2,16 @@ call pathogen#infect()
 
 let mapleader = ","
 
+" Powerline plugin
 let g:Powerline_symbols = 'fancy'
+
+" Ctrl-P plugin
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+  \ }
+
+
 
 color vibrantink
 
