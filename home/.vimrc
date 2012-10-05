@@ -153,3 +153,7 @@ set cursorline
 " Underline highlighted terms to make the highlight less jarring
 highlight Search ctermfg=white ctermbg=black cterm=underline
 
+" Stop it taking such a long time to leave insert mode, see
+" http://www.johnhawthorn.com/2012/09/vi-escape-delays/ for more info
+set timeoutlen=1000 ttimeoutlen=0
+
