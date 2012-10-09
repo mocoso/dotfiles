@@ -153,7 +153,15 @@ set cursorline
 " Underline highlighted terms to make the highlight less jarring
 highlight Search ctermfg=white ctermbg=black cterm=underline
 
-" Stop it taking such a long time to leave insert mode, see
+" Stop it taking such a long time to appear leave insert mode, see
 " http://www.johnhawthorn.com/2012/09/vi-escape-delays/ for more info
 set timeoutlen=1000 ttimeoutlen=0
 
+" Alternative switching modes
+"
+" On Linux - press Shift-Space to toggle normal/insert mode
+:imap <S-Space> <Esc>
+:nmap <S-Space> i
+" On OSX - press Alt-Space to toggler normal/insert mode
+:imap <M-Space> <Esc>`^
+:nmap <M-Space> i
