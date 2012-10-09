@@ -1,6 +1,23 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.zsh.d
 
+# Use the following construct for platform specific sections
+#
+#    if (( ${+OSX} ))
+#    then
+#      ...do that thing...
+#    fi
+
+case $OSTYPE in
+  darwin*)
+    export OSX=true
+  ;;
+  linux-gnu*)
+    export LINUX=true
+  ;;
+esac
+
+
 # source every .zsh file in this rep
 for config_file ($ZSH/*.zsh) source $config_file
 
