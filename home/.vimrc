@@ -165,3 +165,8 @@ set timeoutlen=1000 ttimeoutlen=0
 " On OSX - press Alt-Space to toggler normal/insert mode
 :imap <M-Space> <Esc>`^
 :nmap <M-Space> i
+
+" Cycle through buffers with Tab/Shift-Tab
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprevious<CR>
+
