@@ -19,7 +19,23 @@ esac
 
 
 # source every .zsh file in this rep
-for config_file ($ZSH/*.zsh) source $config_file
+source $ZSH/aws.zsh
+source $ZSH/completion.zsh
+source $ZSH/git.zsh
+source $ZSH/gitx.zsh
+source $ZSH/history.zsh
+source $ZSH/hitch.zsh
+source $ZSH/homebrew.zsh
+source $ZSH/ls.zsh
+source $ZSH/prompt.zsh
+source $ZSH/quicksilver.zsh
+source $ZSH/rbenv.zsh
+source $ZSH/spectrum.zsh
+source $ZSH/tmux.zsh
+source $ZSH/vim.zsh
+source $ZSH/zeus.zsh
+source $ZSH/zsh.zsh
+source $ZSH/bundler.zsh # Load bundler last so it sets the path after homebrew and rbenv
 
 # load every completion after autocomplete loads
 # for config_file ($ZSH/**/completion.zsh) source $config_file
