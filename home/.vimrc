@@ -170,3 +170,7 @@ set timeoutlen=1000 ttimeoutlen=0
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
 
+
+" Settings for vim-commentary
+autocmd FileType ruby set commentstring=#\ %s
+
