@@ -31,6 +31,7 @@ source $ZSH/prompt.zsh
 source $ZSH/quicksilver.zsh
 source $ZSH/rbenv.zsh
 source $ZSH/spectrum.zsh
+source $ZSH/time.zsh
 source $ZSH/tmux.zsh
 source $ZSH/vim.zsh
 source $ZSH/zeus.zsh
