@@ -23,6 +23,7 @@ source $ZSH/aws.zsh
 source $ZSH/completion.zsh
 source $ZSH/git.zsh
 source $ZSH/gitx.zsh
+source $ZSH/go.zsh
 source $ZSH/history.zsh
 source $ZSH/hitch.zsh
 source $ZSH/homebrew.zsh
