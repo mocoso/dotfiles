@@ -32,3 +32,5 @@
   autosetuprebase = always
 [rebase]
 	autosquash = true
+[heroku]
+	account = joel
