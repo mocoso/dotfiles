@@ -31,21 +31,8 @@ precmd() {
   vcs_info
 }
 
-
-# Highlight insert vs. command mode
-function zle-keymap-select {
-  zle reset-prompt
-}
-
-zle -N zle-keymap-select
-
-function vi_mode_prompt_info() {
-  echo "${${KEYMAP/vicmd/ $fg[red][CMD]$reset_color}/(main|viins)/}"
-}
-
 setopt prompt_subst
-export PROMPT='$(prompt_user_and_host)%{$fg[white]%}%c${vcs_info_msg_0_}%{$reset_color%}%
-$(prompt_git_pair)$(vi_mode_prompt_info) $ '
+export PROMPT='$(prompt_user_and_host)%{$fg[white]%}%c${vcs_info_msg_0_}%{$reset_color%}% $(prompt_git_pair) $ '
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 export RPROMPT="${return_code}"
