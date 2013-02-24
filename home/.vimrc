@@ -5,6 +5,17 @@ set number            " Show line numbers
 set ruler             " Show line and column number
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
+set showmatch         " show matching bracket on insert (if it exists)
+set ttimeout
+set ttimeoutlen=50
+set showcmd
+set wildmenu
+set display+=lastline
+set autoread
+set autowrite
+
+" Make Y consistent with C and D.  See :help Y.
+nnoremap Y y$
 
 ""
 "" Whitespace
@@ -14,8 +25,10 @@ set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
+set shiftround                    " round to multiple of shiftwidth
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
+set autoindent                    " autoindent to same level as previous line
 
 " List chars
 set listchars=""                  " Reset the listchars
@@ -30,6 +43,10 @@ set hlsearch    " highlight matches
 set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
 
 ""
 "" Wild settings
@@ -135,6 +152,7 @@ else
 endif
 
 set scrolloff=3
+set sidescrolloff=5
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
