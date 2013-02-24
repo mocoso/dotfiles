@@ -29,6 +29,7 @@ source $ZSH/hitch.zsh
 source $ZSH/homebrew.zsh
 source $ZSH/ls.zsh
 source $ZSH/prompt.zsh
+source $ZSH/python.zsh
 source $ZSH/quicksilver.zsh
 source $ZSH/rbenv.zsh
 source $ZSH/spectrum.zsh
