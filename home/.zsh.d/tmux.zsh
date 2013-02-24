@@ -1,6 +1,6 @@
 # This function will:
 #
-# If the current direction has a tmux set up script (./tmux-up.zsh) then it
+# If the current direction has a tmux set up script (./tmux-session.zsh) then it
 # will name the current tab and then check to see if there is session named
 # after the current directory, 'project' say.
 #
@@ -9,7 +9,7 @@
 # If no, it'll create a new session and run the config script before attaching to
 # it
 function tmux_session_with_set_up() {
-  project_script=".tmux-up.zsh"
+  project_script=".tmux-session.zsh"
 
   if test -f $project_script; then
     project_name=$PWD:t
@@ -29,4 +29,4 @@ function tmux_session_with_set_up() {
   fi
 }
 
-alias tmux='tmux_session_with_set_up'
+alias tsession='tmux_session_with_set_up'
