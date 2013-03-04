@@ -1,1 +1,9 @@
-Dotfiles managed with homesick
+# Dotfiles
+
+Install by running
+
+```bash
+./symlink.sh
+```
+
+From this directory
