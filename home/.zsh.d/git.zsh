@@ -30,6 +30,8 @@ alias gad='git add'
 compdef _git gad=git-add
 alias gmg='git merge'
 compdef _git gmg=git-merge
+alias gd='git diff'
+compdef _git gd=git-diff
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 
