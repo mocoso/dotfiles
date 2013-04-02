@@ -95,7 +95,7 @@ endfunction
 au FileType make setlocal noexpandtab
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
-au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake,*.thor} set ft=ruby
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown | call s:setupWrapping()
