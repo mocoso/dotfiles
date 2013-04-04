@@ -63,6 +63,11 @@ then
   chsh -s /usr/local/bin/zsh
 fi
 
+echo " ---> Disable path_helper because it reorders the path when it is run"
+# So far disabling this has not caused any problems and having it enabled
+# causes problems with the path for vim terminal running under tmux
+sudo chmod ugo-x /usr/libexec/path_helper
+
 echo " ---> Delay standby from after 1 hour to after 12 hours"
 # see http://www.ewal.net/2012/09/09/slow-wake-for-macbook-pro-retina/ for more
 # details
