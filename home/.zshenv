@@ -34,3 +34,6 @@ source $ZSH/vim.zsh
 source $ZSH/zeus.zsh
 source $ZSH/bundler.zsh # Load bundler last so it sets the path after homebrew and rbenv
 
+# Remove duplicates from paths
+typeset -U path cdpath manpath fpath
+
