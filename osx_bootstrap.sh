@@ -137,6 +137,9 @@ sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
 echo " ---> Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
+echo " ---> Move Dock to left of screen"
+defaults write com.apple.dock orientation -string left
+
 echo " ---> Speed up Mission Control animations"
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
