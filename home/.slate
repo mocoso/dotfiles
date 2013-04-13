@@ -19,8 +19,8 @@ bind up:ctrl;alt;cmd     push up    bar-resize:screenSizeY/2
 bind down:ctrl;alt;cmd   push down  bar-resize:screenSizeY/2
 
 
-## Full screen
-bind f:ctrl;alt;cmd      move screenOriginX;screenOriginY screenSizeX;screenSizeY
+## Maximise
+bind m:ctrl;alt;cmd      move screenOriginX;screenOriginY screenSizeX;screenSizeY
 
 
 ## Centred
