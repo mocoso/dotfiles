@@ -90,7 +90,7 @@ echo " ---> Delay standby from after 1 hour to after 12 hours"
 # details
 sudo pmset -a standbydelay 43200
 
-echo " ---> enu bar: disable transparency"
+echo " ---> Menu bar: disable transparency"
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
 echo " ---> Menu bar: show remaining battery time (on pre-10.8); hide percentage"
