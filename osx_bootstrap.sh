@@ -63,6 +63,9 @@ then
   chsh -s /usr/local/bin/zsh
 fi
 
+echo " ---> Ensure submodules are up to date"
+git submodule init && git submodule update
+
 echo " ---> Disable path_helper because it reorders the path when it is run"
 # So far disabling this has not caused any problems and having it enabled
 # causes problems with the path for vim terminal running under tmux
