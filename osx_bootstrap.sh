@@ -146,4 +146,7 @@ defaults write com.apple.dock orientation -string left
 echo " ---> Speed up Mission Control animations"
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
+echo " ---> Symlink dotfiles"
+./symlink.sh > /dev/null
+
 printf "\nReady to go\n"
