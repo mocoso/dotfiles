@@ -7,7 +7,7 @@ function check_installed {
 
 function exit_with_instructions {
   echo ""
-  echo $1 >&2
+  echo "$1" >&2
   echo ""
   exit 1
 }
@@ -65,6 +65,20 @@ fi
 
 echo " ---> Ensure submodules are up to date"
 git submodule init && git submodule update
+
+echo " ---> Ensure ssh with password is disabled"
+(cat /etc/sshd_config | grep -E '^PasswordAuthentication no' > /dev/null) ||
+  (cat /etc/sshd_config | grep -E '^ChallengeResponseAuthentication no' > /dev/null) ||
+  exit_with_instructions "Disable ssh with passwords by
+
+ - Adding (or uncommenting) 'PasswordAuthentication no' from /etc/sshd_config
+
+ - Adding (or uncommenting) 'ChallengeResponseAuthentication no' from /etc/sshd_config
+
+ - Restarting sshd with
+
+    sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
+    sudo launchctl load /System/Library/LaunchDaemons/ssh.plist"
 
 echo " ---> Disable path_helper because it reorders the path when it is run"
 # So far disabling this has not caused any problems and having it enabled
