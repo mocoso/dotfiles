@@ -44,6 +44,7 @@ ensure_brew_installed 'vim'
 check_app_installed "Dropbox" "open https://www.dropbox.com; exit_with_instructions 'Install Dropbox from https://www.dropbox.com'"
 check_app_installed "GitX" "open http://gitx.frim.nl; exit_with_instructions 'Install GitX from http://gitx.frim.nl'"
 check_app_installed "iTerm" "open http://www.iterm2.com/#/section/home; exit_with_instructions 'Install iTerm from http://www.iterm2.com/#/section/home'"
+check_app_installed "Sidestep" "open http://chetansurpur.com/projects/sidestep/; exit_with_instructions 'Install Sidestep from http://chetansurpur.com/projects/sidestep/'"
 
 # terminal
 echo " ---> Check 256 colours are available in the terminal"
