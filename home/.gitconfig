@@ -14,6 +14,8 @@
   sta = stash
   up = !thor git:update
   hist = log --pretty=format:\"%h %ad | %s%d\" --graph --date=short
+  fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 [color]
   diff = auto
   status = auto
