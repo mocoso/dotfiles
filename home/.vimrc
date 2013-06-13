@@ -191,4 +191,4 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " Settings for vim-commentary
 autocmd FileType ruby set commentstring=#\ %s
-
+autocmd FileType sh set commentstring=#\ %s
