@@ -1,5 +1,3 @@
-# Add pip installed packages to the path
-export PATH=/usr/local/share/python:$PATH
 # virtualenv should use Distribute instead of legacy setuptools
 export VIRTUALENV_DISTRIBUTE=true
 # Centralized location for new virtual environments
