@@ -129,6 +129,7 @@ let g:ctrlp_dotfiles = 1
 
 color vibrantink
 
+highlight ColorColumn ctermbg=236 guibg=#303030
 set colorcolumn=81
 
 if has('mac')
