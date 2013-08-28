@@ -161,6 +161,9 @@ defaults write com.apple.dock orientation -string left
 echo " ---> Speed up Mission Control animations"
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
+echo " ---> Disable dashboard"
+defaults write com.apple.dashboard mcx-disabled -boolean YES
+
 echo " ---> Symlink dotfiles"
 ./symlink.sh > /dev/null
 
