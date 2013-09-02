@@ -8,5 +8,6 @@ x_notes
 .tmux-session.*
 .rbenv-gemsets
 .rbenv-version
+.rbenv-vars
 .ruby-version
 tags
