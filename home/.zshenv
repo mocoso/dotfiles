@@ -29,6 +29,7 @@ source $ZSH/ls.zsh
 source $ZSH/python.zsh
 source $ZSH/quicksilver.zsh
 source $ZSH/rbenv.zsh
+source $ZSH/reattach-to-user-namespace.zsh
 source $ZSH/time.zsh
 source $ZSH/vim.zsh
 source $ZSH/zeus.zsh
