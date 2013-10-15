@@ -9,8 +9,6 @@ alias gpu='git push'
 compdef _git gpu=git-push
 alias gc='git commit -v'
 compdef _git gc=git-commit
-alias gco='git checkout'
-compdef _git gco=git-checkout
 alias gcm='git checkout master'
 alias gbr='git branch'
 compdef _git gbr=git-branch
@@ -34,4 +32,34 @@ alias gd='git diff'
 compdef _git gd=git-diff
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
+
+function git_checkout_with_selecta() {
+  if [[ -z $1 ]]; then
+    git checkout `git branch --no-merged | selecta`
+  else
+    git checkout "$@"
+  fi
+}
+alias gco='git_checkout_with_selecta'
+compdef _git gco=git-checkout
+
+function git_branch_delete_with_selecta() {
+  if [[ -z $1 ]]; then
+    git branch -d `git branch --merged | selecta`
+  else
+    git branch -d "$@"
+  fi
+}
+alias gbd='git_branch_delete_with_selecta'
+compdef _git gbd=git-branch
+
+function git_branch_hard_delete_with_selecta() {
+  if [[ -z $1 ]]; then
+    git branch -D `git branch --no-merged | selecta`
+  else
+    git branch -D "$@"
+  fi
+}
+alias gbdd='git_branch_hard_delete_with_selecta'
+compdef _git gbdd=git-branch
 
