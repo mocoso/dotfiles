@@ -18,7 +18,7 @@ function tmux_session_with_set_up() {
     # echo -ne "\e]2;${project_name}\a"
     echo -n -e "\033]0;{$project_name}\007"
 
-    if ! tmux has-session -t $name ; then
+    if ! tmux has-session -t $project_name ; then
       tmux new-session -d -s $project_name
       `./$project_script`
     fi
