@@ -41,7 +41,6 @@ function git_checkout_with_selecta() {
   fi
 }
 alias gco='git_checkout_with_selecta'
-compdef _git gco=git-checkout
 
 function git_branch_delete_with_selecta() {
   if [[ -z $1 ]]; then
@@ -51,7 +50,6 @@ function git_branch_delete_with_selecta() {
   fi
 }
 alias gbd='git_branch_delete_with_selecta'
-compdef _git gbd=git-branch
 
 function git_branch_hard_delete_with_selecta() {
   if [[ -z $1 ]]; then
@@ -61,5 +59,4 @@ function git_branch_hard_delete_with_selecta() {
   fi
 }
 alias gbdd='git_branch_hard_delete_with_selecta'
-compdef _git gbdd=git-branch
 

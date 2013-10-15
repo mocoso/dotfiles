@@ -10,3 +10,9 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm 
 # Use caching so that commands like apt and dpkg complete are useable
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH/cache/
+
+# COMPLETE_ALIASES
+# Prevents aliases on the command line from being internally substituted
+# before completion is attempted.  The effect is to make the alias a
+# distinct command for completion purposes.
+setopt no_complete_aliases
