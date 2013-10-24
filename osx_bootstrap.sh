@@ -32,10 +32,8 @@ brew doctor || { exit 1; }
 
 ensure_brew_installed 'ctags'
 ensure_brew_installed 'git'
-ensure_brew_installed 'rbenv'
-ensure_brew_installed 'rbenv-gemset'
-ensure_brew_installed 'rbenv-vars'
 ensure_brew_installed 'ruby-build'
+ensure_brew_installed 'chruby'
 ensure_brew_installed 'reattach-to-user-namespace'
 ensure_brew_installed 'tmux'
 ensure_brew_installed 'tree'

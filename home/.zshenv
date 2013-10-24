@@ -18,6 +18,7 @@ case $OSTYPE in
 esac
 
 source $ZSH/aws.zsh
+source $ZSH/chruby.zsh
 source $ZSH/completion.zsh
 source $ZSH/git.zsh
 source $ZSH/gitx.zsh
@@ -28,7 +29,6 @@ source $ZSH/homebrew.zsh
 source $ZSH/ls.zsh
 source $ZSH/python.zsh
 source $ZSH/quicksilver.zsh
-source $ZSH/rbenv.zsh
 source $ZSH/reattach-to-user-namespace.zsh
 source $ZSH/time.zsh
 source $ZSH/vim.zsh
