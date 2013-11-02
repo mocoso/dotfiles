@@ -39,6 +39,7 @@ ensure_brew_installed 'tmux'
 ensure_brew_installed 'tree'
 ensure_brew_installed 'mercurial' # for vim
 ensure_brew_installed 'vim'
+ensure_brew_installed 'ssh-copy-id'
 
 check_app_installed "Dropbox" "open https://www.dropbox.com; exit_with_instructions 'Install Dropbox from https://www.dropbox.com'"
 check_app_installed "GitX" "open http://gitx.frim.nl; exit_with_instructions 'Install GitX from http://gitx.frim.nl'"
