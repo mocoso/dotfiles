@@ -19,9 +19,6 @@
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "home/.vim/bundle/vim-powerline"]
-	path = home/.vim/bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "home/.vim/bundle/vim-qargs"]
 	path = home/.vim/bundle/vim-qargs
 	url = git://github.com/henrik/vim-qargs.git
@@ -40,3 +37,6 @@
 [submodule "home/.vim/bundle/vim-dispatch"]
 	path = home/.vim/bundle/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
+[submodule "home/.vim/bundle/vim-airline"]
+	path = home/.vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
