@@ -10,6 +10,8 @@ compdef _git gpu=git-push
 alias gc='git commit -v'
 compdef _git gc=git-commit
 alias gcm='git checkout master'
+alias gco='git checkout'
+compdef _git gco=git-checkout
 alias gbr='git branch'
 compdef _git gbr=git-branch
 alias gcount='git shortlog -sn'
@@ -40,7 +42,7 @@ function git_checkout_with_selecta() {
     git checkout "$@"
   fi
 }
-alias gco='git_checkout_with_selecta'
+alias gcos='git_checkout_with_selecta'
 
 function git_branch_delete_with_selecta() {
   if [[ -z $1 ]]; then
