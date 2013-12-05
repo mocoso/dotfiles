@@ -35,6 +35,9 @@ source $ZSH/vim.zsh
 source $ZSH/zeus.zsh
 source $ZSH/bundler.zsh # Load bundler last so it sets the path after homebrew and rbenv
 
+# Stop it beeping
+setopt NO_BEEP
+
 # For my binaries
 export PATH=~/bin:$PATH
 
