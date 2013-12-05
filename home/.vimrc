@@ -13,6 +13,7 @@ set wildmenu
 set display+=lastline
 set autoread
 set autowrite
+set visualbell        " no more beeps
 
 " Make Y consistent with C and D.  See :help Y.
 nnoremap Y y$
