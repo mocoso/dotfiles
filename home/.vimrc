@@ -68,6 +68,12 @@ set wildignore+=*/vendor/cache/*,*/.sass-cache/*
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
 
+" Ignore tag files
+set wildignore+=tags
+
+" Ignore image files
+ set wildignore+=*.png,*.jpg,*.jpeg,*.gif
+
 ""
 "" Backup and swap files
 ""
