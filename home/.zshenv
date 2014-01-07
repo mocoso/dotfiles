@@ -27,6 +27,7 @@ source $ZSH/history.zsh
 source $ZSH/hitch.zsh
 source $ZSH/homebrew.zsh
 source $ZSH/ls.zsh
+source $ZSH/mou.zsh
 source $ZSH/python.zsh
 source $ZSH/quicksilver.zsh
 source $ZSH/reattach-to-user-namespace.zsh
