@@ -1,7 +1,7 @@
 export GIT_EDITOR="vim -f"
 
 # Aliases
-alias gst='git status'
+alias gst='git status -sb'
 compdef _git gst=git-status
 alias gup='git fetch && git rebase'
 compdef _git gup=git-fetch
