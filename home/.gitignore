@@ -2,12 +2,8 @@
 .DS_Store
 x_notes
 .screenrc
-.rvmrc
 .project
 .vagrant
 .tmux-session.*
-.rbenv-gemsets
-.rbenv-version
-.rbenv-vars
 .ruby-version
 tags
