@@ -20,7 +20,7 @@ prompt_user_and_host() {
 
 autoload -Uz vcs_info
 
-zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "%{$fg_bold[green]%}●"
 zstyle ':vcs_info:*' unstagedstr "%{$fg_bold[red]%}●"
