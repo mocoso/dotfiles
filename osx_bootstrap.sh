@@ -167,4 +167,7 @@ check_app_installed "GitX" "open http://gitx.frim.nl; exit_with_instructions 'In
 check_app_installed "iTerm" "open http://www.iterm2.com/#/section/home; exit_with_instructions 'Install iTerm from http://www.iterm2.com/#/section/home'"
 check_app_installed "Sidestep" "open http://chetansurpur.com/projects/sidestep/; exit_with_instructions 'Install Sidestep from http://chetansurpur.com/projects/sidestep/'"
 
+echo " ---> Configure git to avoid complex merges"
+git config --global merge.ff only
+
 printf "\nReady to go\n"
