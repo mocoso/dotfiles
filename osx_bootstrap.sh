@@ -158,6 +158,10 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 echo " ---> Disable dashboard"
 defaults write com.apple.dashboard mcx-disabled -boolean YES
 
+echo " ---> Disable smart quotes and dashes"
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
 echo " ---> Symlink dotfiles"
 ./symlink.sh > /dev/null
 
