@@ -162,6 +162,10 @@ echo " ---> Disable smart quotes and dashes"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
+echo " ---> Setting trackpad & mouse speed to a reasonable number"
+defaults write -g com.apple.trackpad.scaling 2
+defaults write -g com.apple.mouse.scaling 2.5
+
 echo " ---> Symlink dotfiles"
 ./symlink.sh > /dev/null
 
