@@ -24,6 +24,7 @@
 [merge]
   tool = opendiff
   conflictstyle = diff3
+  ff = only
 [color "interactive"]
   prompt = magenta
 [push]
