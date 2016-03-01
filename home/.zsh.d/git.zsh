@@ -20,6 +20,8 @@ alias gcp='git cherry-pick'
 compdef _git gcp=git-cherry-pick
 alias glg='git log --stat --max-count=10'
 compdef _git glg=git-log
+alias gg='git log --oneline --abbrev-commit --graph --decorate'
+compdef _git gg=git-log
 alias ggg='git log --oneline --abbrev-commit --all --graph --decorate'
 compdef _git ggg=git-log
 alias grb='git rebase'
