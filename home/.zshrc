@@ -9,6 +9,9 @@ source $ZSH/zsh.zsh
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 # Entering the name of a directory (if it's not a command) will automatically
 # cd to that directory.
 setopt autocd
