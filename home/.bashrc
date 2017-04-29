@@ -4,7 +4,6 @@ source "$HOME/.bash.d/env"
 case $OSTYPE in
   darwin*)
     source "$HOME/.bash.d/osx/aliases"
-    source "$HOME/.bash.d/osx/aws"
     source "$HOME/.bash.d/osx/completion"
     source "$HOME/.bash.d/osx/env"
     source "$HOME/.bash.d/osx/brew"
@@ -43,4 +42,3 @@ if [ -d "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
-
