@@ -1,5 +1,5 @@
 function fish_prompt --description 'Write out the prompt'
-  printf '%s%s%s:' (set_color cyan) (hostname|cut -d . -f 1) (set_color normal)
+  printf '%s%s%s:' (set_color purple) (hostname|cut -d . -f 1) (set_color normal)
 
   # Write the process working directory
   if test -w "."
@@ -9,7 +9,7 @@ function fish_prompt --description 'Write out the prompt'
   end
 
   if is_git_repo
-    printf '%s±%s%s' (set_color red) (set_color white) (__git_ps1)
+    printf '%s±%s%s' (set_color red) (set_color yellow) (__git_ps1)
   end
 
   if git_staged
