@@ -49,16 +49,18 @@ case "$TERM" in
   *)     exit_with_instructions "Terminal is $TERM - set it to xterm-256color so that 256 colours are available" ;;
 esac
 
-# zsh
-ensure_brew_installed 'zsh'
+# fish
 
-echo " ---> Ensure using brew installed zsh"
-(cat /etc/shells | grep /usr/local/bin/zsh > /dev/null) || exit_with_instructions 'Add zsh to allowed shells with by adding /usr/local/bin/zsh to /etc/shells'
+echo " ---> Ensure using fish shell"
+(cat /etc/shells | grep /usr/local/bin/fish > /dev/null) || exit_with_instructions 'Add fish to allowed shells with by adding /usr/local/bin/fish to /etc/shells'
 
-if [ "$SHELL" != "/usr/local/bin/zsh" ]
+if [ "$SHELL" != "/usr/local/bin/fish" ]
 then
-  chsh -s /usr/local/bin/zsh
+  chsh -s /usr/local/bin/fish
 fi
+
+echo " ---> Set up completions for fish"
+fish_update_completions
 
 echo " ---> Ensure submodules are up to date"
 git submodule init && git submodule update
