@@ -27,3 +27,6 @@ alias gmg="git merge"
 alias gd="git diff"
 alias grh="git reset HEAD"
 alias grhh="git reset HEAD --hard"
+
+# ls
+alias l="ls -alG"
