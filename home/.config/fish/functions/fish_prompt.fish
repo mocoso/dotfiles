@@ -12,8 +12,12 @@ function fish_prompt --description 'Write out the prompt'
     printf '%s±%s%s' (set_color red) (set_color white) (__git_ps1)
   end
 
-  if git_dirty
-    printf '%s!' (set_color yellow)
+  if git_staged
+    printf '%s●' (set_color green)
+  end
+
+  if git_unstaged
+    printf '%s●' (set_color red)
   end
 
   printf '%s $%s' (set_color -o $fish_color_cwd) (set_color normal)
