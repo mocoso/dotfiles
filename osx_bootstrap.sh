@@ -61,7 +61,7 @@ then
 fi
 
 echo " ---> Set up completions for fish"
-fish_update_completions
+fish -c fish_update_completions
 
 echo " ---> Ensure submodules are up to date"
 git submodule init && git submodule update
