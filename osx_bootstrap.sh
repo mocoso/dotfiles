@@ -81,6 +81,9 @@ echo " ---> Delay standby from after 1 hour to after 12 hours"
 # details
 sudo pmset -a standbydelay 43200
 
+echo " ---> Disable the sound effects on boot"
+sudo nvram SystemAudioVolume=" "
+
 echo " ---> Menu bar: disable transparency"
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
