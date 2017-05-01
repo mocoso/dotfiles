@@ -51,7 +51,6 @@ case "$TERM" in
 esac
 
 # fish
-
 echo " ---> Ensure using fish shell"
 (cat /etc/shells | grep /usr/local/bin/fish > /dev/null) || exit_with_instructions 'Add fish to allowed shells with by adding /usr/local/bin/fish to /etc/shells'
 
@@ -59,9 +58,6 @@ if [ "$SHELL" != "/usr/local/bin/fish" ]
 then
   chsh -s /usr/local/bin/fish
 fi
-
-echo " ---> Set up completions for fish"
-fish -c fish_update_completions
 
 echo " ---> Ensure submodules are up to date"
 git submodule init && git submodule update
@@ -181,5 +177,8 @@ check_app_installed "Sidestep" "open http://chetansurpur.com/projects/sidestep/;
 
 echo " ---> Configure git to avoid complex merges"
 git config --global merge.ff only
+
+echo " ---> Set up completions for fish"
+fish -c fish_update_completions
 
 printf "\nReady to go\n"
