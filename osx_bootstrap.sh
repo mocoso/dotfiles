@@ -67,13 +67,13 @@ echo " ---> Ensure submodules are up to date"
 git submodule init && git submodule update
 
 echo " ---> Ensure ssh with password is disabled"
-(cat /private/etc/ssh/sshd_config | grep -E '^PasswordAuthentication no' > /dev/null) ||
-  (cat /private/etc/ssh/sshd_config | grep -E '^ChallengeResponseAuthentication no' > /dev/null) ||
+(cat /etc/ssh/sshd_config | grep -E '^PasswordAuthentication no' > /dev/null) ||
+  (cat /etc/ssh/sshd_config | grep -E '^ChallengeResponseAuthentication no' > /dev/null) ||
   exit_with_instructions "Disable ssh with passwords by
 
- - Adding (or uncommenting) 'PasswordAuthentication no' from /private/etc/ssh/sshd_config
+ - Adding (or uncommenting) 'PasswordAuthentication no' from /etc/ssh/sshd_config
 
- - Adding (or uncommenting) 'ChallengeResponseAuthentication no' from /private/etc/ssh/sshd_config
+ - Adding (or uncommenting) 'ChallengeResponseAuthentication no' from /etc/ssh/sshd_config
 
  - Restarting sshd with
 
