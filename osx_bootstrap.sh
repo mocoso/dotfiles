@@ -174,9 +174,6 @@ check_app_installed "Dropbox" "open https://www.dropbox.com; exit_with_instructi
 check_app_installed "iTerm" "open http://www.iterm2.com/#/section/home; exit_with_instructions 'Install iTerm from http://www.iterm2.com/#/section/home'"
 check_app_installed "Sidestep" "open http://chetansurpur.com/projects/sidestep/; exit_with_instructions 'Install Sidestep from http://chetansurpur.com/projects/sidestep/'"
 
-echo " ---> Configure git to avoid complex merges"
-git config --global merge.ff only
-
 echo " ---> Set up completions for fish"
 fish -c fish_update_completions
 
