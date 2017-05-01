@@ -3,6 +3,7 @@
   email = joel@joelchippindale.com
 [core]
   excludesfile = ~/.gitignore
+  editor = $(which vim)
 [alias]
   di = diff
   co = checkout

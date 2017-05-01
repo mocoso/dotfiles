@@ -9,8 +9,6 @@ source /usr/local/share/chruby/chruby.fish
 source /usr/local/share/chruby/auto.fish
 
 # git
-set -U GIT_EDITOR "vim -f"
-
 alias gst="git status -sb"
 alias gup="git fetch ;and git rebase"
 alias gpu="git push"
