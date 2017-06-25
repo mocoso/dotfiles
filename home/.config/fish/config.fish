@@ -4,6 +4,9 @@ set -g fish_color_uneditable_cwd white
 # bundler
 abbr be "bundle exec"
 
+# fry
+source /usr/local/opt/fry/share/fry/fry.fish
+
 # git
 alias gst="git status -sb"
 alias gup="git fetch ;and git rebase"
