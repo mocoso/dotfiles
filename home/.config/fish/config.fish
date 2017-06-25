@@ -4,10 +4,6 @@ set -g fish_color_uneditable_cwd white
 # bundler
 abbr be "bundle exec"
 
-# chruby
-source /usr/local/share/chruby/chruby.fish
-source /usr/local/share/chruby/auto.fish
-
 # git
 alias gst="git status -sb"
 alias gup="git fetch ;and git rebase"

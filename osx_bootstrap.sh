@@ -32,10 +32,8 @@ brew doctor || { exit 1; }
 
 ensure_brew_installed 'ctags'
 ensure_brew_installed 'git'
-ensure_brew_installed 'chruby'
 ensure_brew_installed 'ruby-install'
 ensure_brew_installed 'fish'
-ensure_brew_installed 'chruby-fish'
 ensure_brew_installed 'reattach-to-user-namespace'
 ensure_brew_installed 'tmux'
 ensure_brew_installed 'tree'
