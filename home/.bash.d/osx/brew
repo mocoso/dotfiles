@@ -1,2 +1,2 @@
 # prioritise binaries installed by homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH

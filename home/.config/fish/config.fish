@@ -31,7 +31,7 @@ abbr grhh "git reset HEAD --hard"
 # homebrew
 # prioritise binaries installed by homebrew
 # TODO: only apply for OSX
-set PATH /usr/local/bin /usr/local/sbin $PATH
+set PATH /usr/local/bin $PATH
 
 # ls
 alias l="ls -alG"
