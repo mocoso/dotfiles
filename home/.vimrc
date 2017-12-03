@@ -125,6 +125,11 @@ au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 " make PHP folllow standard 4 spaces for tabs
 au FileType php setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
+" use spellchecker for markdown and commit messages
+au FileType gitcommit setlocal spell spelllang=en_gb
+au FileType markdown setlocal spell spelllang=en_gb
+
+
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
