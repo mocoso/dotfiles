@@ -157,6 +157,10 @@ highlight ColorColumn ctermbg=233 guibg=#121212
 let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(120,999),",")
 
+" Use underline on spelling mistakes
+hi clear SpellBad
+hi SpellBad cterm=underline
+
 if has('mac')
   set clipboard=unnamed
 endif
