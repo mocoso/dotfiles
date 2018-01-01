@@ -28,10 +28,5 @@ abbr gd "git diff"
 abbr grh "git reset HEAD"
 abbr grhh "git reset HEAD --hard"
 
-# homebrew
-# prioritise binaries installed by homebrew
-# TODO: only apply for OSX
-set PATH /usr/local/bin $PATH
-
 # ls
 alias l="ls -alG"
