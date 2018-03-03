@@ -67,7 +67,7 @@ function success {
 }
 
 # Symlink the files
-for filepath in `find $dotfilehome -depth 1 -name ".*"`; do
+for filepath in `find $dotfilehome -maxdepth 1 -name ".*"`; do
   file=`basename $filepath`
   if [[ -e $HOME/$file && `readlink "$HOME/$file"` == "$dotfilehome/$file" ]]; then
     status $bldblu 'identical' $file
