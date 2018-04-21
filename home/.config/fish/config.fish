@@ -30,3 +30,4 @@ abbr grhh "git reset HEAD --hard"
 
 # ls
 alias l="ls -alG"
+set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
