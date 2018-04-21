@@ -151,6 +151,8 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_dotfiles = 1
 
+let g:syntastic_ignore_files = ['\.elm$']
+
 color vibrantink
 
 highlight ColorColumn ctermbg=233 guibg=#121212
