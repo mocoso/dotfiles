@@ -34,3 +34,6 @@
 [submodule "home/.vim/bundle/elm-vim"]
 	path = home/.vim/bundle/elm-vim
 	url = https://github.com/ElmCast/elm-vim.git
+[submodule "home/.vim/bundle/vim-crystal"]
+	path = home/.vim/bundle/vim-crystal
+	url = git@github.com:rhysd/vim-crystal.git
