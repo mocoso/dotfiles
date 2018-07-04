@@ -1,39 +1,39 @@
 [submodule "home/.vim/bundle/ctrlp.vim"]
-	path = home/.vim/bundle/ctrlp.vim
+	path = home/.vim/pack/plugins/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "home/.vim/bundle/vim-fugitive"]
-	path = home/.vim/bundle/vim-fugitive
+	path = home/.vim/pack/plugins/start/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "home/.vim/bundle/vim-rails"]
-	path = home/.vim/bundle/vim-rails
+	path = home/.vim/pack/plugins/start/vim-rails
 	url = git://github.com/tpope/vim-rails.git
 [submodule "home/.vim/bundle/vim-commentary"]
-	path = home/.vim/bundle/vim-commentary
+	path = home/.vim/pack/plugins/start/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
 [submodule "home/.vim/bundle/supertab"]
-	path = home/.vim/bundle/supertab
+	path = home/.vim/pack/plugins/start/supertab
 	url = git://github.com/ervandew/supertab.git
 [submodule "home/.vim/bundle/vim-qargs"]
-	path = home/.vim/bundle/vim-qargs
+	path = home/.vim/pack/plugins/start/vim-qargs
 	url = git://github.com/henrik/vim-qargs.git
 [submodule "home/.vim/bundle/syntastic"]
-	path = home/.vim/bundle/syntastic
+	path = home/.vim/pack/plugins/start/syntastic
 	url = git://github.com/scrooloose/syntastic.git
 [submodule "home/.vim/bundle/vim-unimpaired"]
-	path = home/.vim/bundle/vim-unimpaired
+	path = home/.vim/pack/plugins/start/vim-unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
 [submodule "home/.vim/bundle/puppet-syntax-vim"]
-	path = home/.vim/bundle/puppet-syntax-vim
+	path = home/.vim/pack/plugins/start/puppet-syntax-vim
 	url = git://github.com/puppetlabs/puppet-syntax-vim.git
 [submodule "home/.vim/bundle/vim-dispatch"]
-	path = home/.vim/bundle/vim-dispatch
+	path = home/.vim/pack/plugins/start/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
 [submodule "home/.vim/bundle/vim-airline"]
-	path = home/.vim/bundle/vim-airline
+	path = home/.vim/pack/plugins/start/vim-airline
 	url = https://github.com/bling/vim-airline
 [submodule "home/.vim/bundle/elm-vim"]
-	path = home/.vim/bundle/elm-vim
+	path = home/.vim/pack/plugins/start/elm-vim
 	url = https://github.com/ElmCast/elm-vim.git
 [submodule "home/.vim/bundle/vim-crystal"]
-	path = home/.vim/bundle/vim-crystal
+	path = home/.vim/pack/plugins/start/vim-crystal
 	url = git@github.com:rhysd/vim-crystal.git
