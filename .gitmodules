@@ -34,3 +34,6 @@
 [submodule "home/.vim/bundle/vim-crystal"]
 	path = home/.vim/pack/plugins/start/vim-crystal
 	url = git@github.com:rhysd/vim-crystal.git
+[submodule "home/.vim/pack/plugins/start/julia-vim"]
+	path = home/.vim/pack/plugins/start/julia-vim
+	url = git://github.com/JuliaEditorSupport/julia-vim.git
