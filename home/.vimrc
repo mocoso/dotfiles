@@ -1,3 +1,28 @@
+packadd minpac
+
+call minpac#init()
+
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+" add other plugins here.
+call minpac#add('kien/ctrlp.vim')
+call minpac#add('ElmCast/elm-vim')
+call minpac#add('JuliaEditorSupport/julia-vim')
+call minpac#add('ervandew/supertab')
+call minpac#add('scrooloose/syntastic')
+call minpac#add('bling/vim-airline')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('rhysd/vim-crystal')
+call minpac#add('tpope/vim-dispatch')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('henrik/vim-qargs')
+call minpac#add('tpope/vim-rails')
+call minpac#add('tpope/vim-unimpaired')
+
+" Load the plugins right now. (optional)
+"packloadall
+
 set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
 set ruler             " Show line and column number
