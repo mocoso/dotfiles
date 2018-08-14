@@ -170,7 +170,6 @@ echo " ---> Symlink dotfiles"
 ./symlink.sh > /dev/null
 
 check_app_installed "Dropbox" "open https://www.dropbox.com; exit_with_instructions 'Install Dropbox from https://www.dropbox.com'"
-check_app_installed "Sidestep" "open http://chetansurpur.com/projects/sidestep/; exit_with_instructions 'Install Sidestep from http://chetansurpur.com/projects/sidestep/'"
 
 echo " ---> Set up completions for fish"
 fish -c fish_update_completions
