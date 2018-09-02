@@ -40,7 +40,6 @@ ensure_brew_installed 'fry'
 ensure_brew_installed 'reattach-to-user-namespace'
 ensure_brew_installed 'tmux'
 ensure_brew_installed 'tree'
-ensure_brew_installed 'mercurial' # for vim
 ensure_brew_installed 'vim'
 ensure_brew_installed 'ssh-copy-id'
 
