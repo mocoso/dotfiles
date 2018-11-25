@@ -4,6 +4,18 @@ set -g fish_color_uneditable_cwd white
 # bundler
 abbr be "bundle exec"
 
+# docker
+abbr dkps docker ps
+abbr dkprune docker system prune -af
+
+function dkl
+    docker logs -f (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}')
+end
+
+function dkx
+    docker exec -it (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}') $argv
+end
+
 # fry
 source /usr/local/opt/fry/share/fry/fry.fish
 
@@ -31,3 +43,4 @@ abbr grhh "git reset HEAD --hard"
 # ls
 alias l="ls -alG"
 set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
+
