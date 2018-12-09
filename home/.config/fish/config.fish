@@ -16,6 +16,10 @@ function dkx
     docker exec -it (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}') $argv
 end
 
+function dkr
+    docker run -it (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}') $argv
+end
+
 # fry
 source /usr/local/opt/fry/share/fry/fry.fish
 
