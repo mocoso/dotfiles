@@ -12,7 +12,7 @@ function dkl
     docker logs -f (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}')
 end
 
-function dkx
+function dke
     docker exec -it (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}') $argv
 end
 
