@@ -7,6 +7,10 @@ abbr be "bundle exec"
 # docker
 abbr dkps docker ps
 abbr dkprune docker system prune -af
+abbr dks docker-compose stop
+abbr dkb docker-compose build
+abbr dku docker-compose up
+abbr dkud docker-compose up -d
 
 function dkl
     docker logs -f (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}')
