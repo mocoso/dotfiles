@@ -35,8 +35,6 @@ ensure_brew_installed 'git'
 ensure_brew_installed 'ruby-install'
 ensure_brew_installed 'fish'
 
-brew tap igas/fry
-ensure_brew_installed 'fry'
 ensure_brew_installed 'reattach-to-user-namespace'
 ensure_brew_installed 'tmux'
 ensure_brew_installed 'tree'

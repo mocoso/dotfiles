@@ -24,9 +24,6 @@ function dkr
     docker run -it (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}') $argv
 end
 
-# fry
-source /usr/local/opt/fry/share/fry/fry.fish
-
 # git
 alias gst="git status -sb"
 alias gup="git fetch ;and git rebase"
