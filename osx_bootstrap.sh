@@ -41,6 +41,10 @@ ensure_brew_installed 'tree'
 ensure_brew_installed 'vim'
 ensure_brew_installed 'ssh-copy-id'
 
+echo " ---> Check vim has clipboard support"
+(vim --version | grep +clipboard > /dev/null) || exit_with_instructions 'Ensure vim is installed with clipboard support'
+
+
 # terminal
 echo " ---> Check 256 colours are available in the terminal"
 case "$TERM" in
