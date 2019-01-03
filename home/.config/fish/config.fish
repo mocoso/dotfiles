@@ -5,24 +5,15 @@ set -g fish_color_uneditable_cwd white
 abbr be "bundle exec"
 
 # docker
-abbr dkps docker ps
-abbr dkprune docker system prune -af
-abbr dks docker-compose stop
-abbr dkb docker-compose build
-abbr dku docker-compose up
-abbr dkud docker-compose up -d
-
-function dkl
-    docker logs -f (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}')
-end
-
-function dke
-    docker exec -it (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}') $argv
-end
-
-function dkr
-    docker run -it (docker ps | awk -v app=(basename $PWD) '$2 ~ app{print $1}') $argv
-end
+abbr dkps "docker ps"
+abbr dkprune "docker system prune -af"
+abbr dks "docker-compose stop"
+abbr dkb "docker-compose build"
+abbr dku "docker-compose up"
+abbr dkud "docker-compose up -d"
+abbr dkl "docker-compose logs"
+abbr dke "docker-compose exec app"
+abbr dkr "docker-compose run app"
 
 # git
 alias gst="git status -sb"
