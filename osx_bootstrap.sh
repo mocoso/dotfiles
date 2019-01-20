@@ -1,20 +1,10 @@
 #!/usr/bin/env bash
 
-function check_installed {
-  echo " ---> Check $1 installed"
-  command -v $1 >/dev/null 2>&1 || { echo " ---> Missing"; eval $2; } || { exit 1; }
-}
-
 function exit_with_instructions {
   echo ""
   echo "$1" >&2
   echo ""
   exit 1
-}
-
-function ensure_brew_installed {
-  echo " ---> Check $1 brew installed"
-  brew list | grep $1 > /dev/null || brew install $1
 }
 
 function check_app_installed {
@@ -27,19 +17,6 @@ function check_app_installed {
   fi
 }
 
-check_installed 'brew' 'exit_with_instructions "Install homebrew from http://mxcl.github.com/homebrew/"'
-brew doctor || { exit 1; }
-
-ensure_brew_installed 'ctags'
-ensure_brew_installed 'git'
-ensure_brew_installed 'ruby-install'
-ensure_brew_installed 'fish'
-
-ensure_brew_installed 'reattach-to-user-namespace'
-ensure_brew_installed 'tmux'
-ensure_brew_installed 'tree'
-ensure_brew_installed 'vim'
-ensure_brew_installed 'ssh-copy-id'
 
 echo " ---> Check vim has clipboard support"
 (vim --version | grep +clipboard > /dev/null) || exit_with_instructions 'Ensure vim is installed with clipboard support'
@@ -166,9 +143,6 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 echo " ---> Setting trackpad & mouse speed to a reasonable number"
 defaults write -g com.apple.trackpad.scaling 2
 defaults write -g com.apple.mouse.scaling 2.5
-
-echo " ---> Symlink dotfiles"
-make > /dev/null
 
 check_app_installed "Dropbox" "open https://www.dropbox.com; exit_with_instructions 'Install Dropbox from https://www.dropbox.com'"
 
