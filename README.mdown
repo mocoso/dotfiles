@@ -3,7 +3,7 @@
 Install by running
 
 ```bash
-./symlink.sh
+make
 ```
 
 From this directory
