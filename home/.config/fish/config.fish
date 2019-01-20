@@ -12,8 +12,10 @@ abbr dkb "docker-compose build"
 abbr dku "docker-compose up"
 abbr dkud "docker-compose up -d"
 abbr dkl "docker-compose logs"
-abbr dke "docker-compose exec app"
-abbr dkr "docker-compose run app"
+abbr dke "docker-compose exec"
+abbr dkr "docker-compose run"
+abbr dkea "docker-compose exec app"
+abbr dkra "docker-compose run app"
 
 # git
 alias gst="git status -sb"
