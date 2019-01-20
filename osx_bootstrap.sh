@@ -168,7 +168,7 @@ defaults write -g com.apple.trackpad.scaling 2
 defaults write -g com.apple.mouse.scaling 2.5
 
 echo " ---> Symlink dotfiles"
-./symlink.sh > /dev/null
+make > /dev/null
 
 check_app_installed "Dropbox" "open https://www.dropbox.com; exit_with_instructions 'Install Dropbox from https://www.dropbox.com'"
 
