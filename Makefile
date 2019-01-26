@@ -8,6 +8,9 @@ all: install
 
 dotfiles: $(SYMLINKS)
 
+download_git_submodules:
+	git submodule init && git submodule update
+
 $(SYMLINKS): $(HOME)/.%: $(CURDIR)/home/.%
 	ln -is $< $@
 
@@ -39,9 +42,9 @@ OSX_BREW_INSTALL_BINARIES :=
 osx_bootstrap:
 endif
 
-install: $(OSX_BREW_INSTALL_BINARIES) dotfiles osx_bootstrap
+install: $(OSX_BREW_INSTALL_BINARIES) download_git_submodules dotfiles osx_bootstrap
 	
-.PHONY: all dotfiles list_dotfiles install clean
+.PHONY: all dotfiles list_dotfiles download_git_submodules install clean
 
 clean:
 	rm $(SYMLINKS)

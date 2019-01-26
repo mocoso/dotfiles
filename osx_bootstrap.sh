@@ -38,9 +38,6 @@ then
   chsh -s /usr/local/bin/fish
 fi
 
-echo " ---> Ensure submodules are up to date"
-git submodule init && git submodule update
-
 echo " ---> Ensure ssh with password is disabled"
 (cat /etc/ssh/sshd_config | grep -E '^PasswordAuthentication no' > /dev/null) ||
   (cat /etc/ssh/sshd_config | grep -E '^ChallengeResponseAuthentication no' > /dev/null) ||
