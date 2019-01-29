@@ -112,10 +112,6 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 echo " ---> Prevent Time Machine from prompting to use new hard drives as backup volume"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-echo " ---> Enable access for assistive devices"
-echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
-sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
-
 echo " ---> Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
