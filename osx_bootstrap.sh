@@ -53,7 +53,7 @@ echo " ---> Ensure ssh with password is disabled"
     sudo launchctl load /System/Library/LaunchDaemons/ssh.plist"
 
 echo " ---> Disable the sound effects on boot"
-sudo nvram SystemAudioVolume=" "
+(nvram -d name SystemAudioVolume &> /dev/null) && sudo nvram -d SystemAudioVolume
 
 echo " ---> Menu bar: disable transparency"
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
