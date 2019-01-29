@@ -42,7 +42,12 @@ OSX_BREW_INSTALL_BINARIES :=
 osx_bootstrap:
 endif
 
-install: $(OSX_BREW_INSTALL_BINARIES) download_git_submodules dotfiles osx_bootstrap
+fish_completions:
+	fish -c fish_update_completions
+
+
+install: $(OSX_BREW_INSTALL_BINARIES) download_git_submodules dotfiles \
+	fish_completions osx_bootstrap
 	
 .PHONY: all dotfiles list_dotfiles download_git_submodules install clean
 

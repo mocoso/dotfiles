@@ -143,7 +143,5 @@ defaults write -g com.apple.mouse.scaling 2.5
 
 check_app_installed "Dropbox" "open https://www.dropbox.com; exit_with_instructions 'Install Dropbox from https://www.dropbox.com'"
 
-echo " ---> Set up completions for fish"
-fish -c fish_update_completions
 
 printf "\nReady to go\n"
