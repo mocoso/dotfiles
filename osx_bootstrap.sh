@@ -52,11 +52,6 @@ echo " ---> Ensure ssh with password is disabled"
     sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
     sudo launchctl load /System/Library/LaunchDaemons/ssh.plist"
 
-echo " ---> Delay standby from after 1 hour to after 12 hours"
-# see http://www.ewal.net/2012/09/09/slow-wake-for-macbook-pro-retina/ for more
-# details
-sudo pmset -a standbydelay 43200
-
 echo " ---> Disable the sound effects on boot"
 sudo nvram SystemAudioVolume=" "
 
