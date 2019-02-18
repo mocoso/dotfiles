@@ -36,10 +36,17 @@ $(OSX_BREW_BINARY):
 
 osx_bootstrap:
 	./osx_bootstrap.sh
+
+# Configure homebrew permissions to allow multiple users on MAC OSX.
+# Any user from the brew  group will be able to manage the homebrew and cask installation on the machine.
+fix_brew_permissions:
+	for d in /usr/local/*/; do chgrp -R brew $$d && chmod -R g+w $$d; done
+
 else
 OSX_BREW_INSTALL_BINARIES :=
 
 osx_bootstrap:
+fix_brew_permissions:
 endif
 
 fish_completions:
@@ -49,7 +56,8 @@ fish_completions:
 install: $(OSX_BREW_INSTALL_BINARIES) download_git_submodules dotfiles \
 	fish_completions osx_bootstrap
 	
-.PHONY: all dotfiles list_dotfiles download_git_submodules install clean
+.PHONY: all dotfiles list_dotfiles download_git_submodules install \
+	fix_brew_permissions clean
 
 clean:
 	rm $(SYMLINKS)
