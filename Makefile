@@ -52,12 +52,14 @@ endif
 fish_completions:
 	fish -c fish_update_completions
 
+install_vim_plugins:
+	vim -c "call minpac#update()" -c ":q"
 
 install: $(OSX_BREW_INSTALL_BINARIES) download_git_submodules dotfiles \
-	fish_completions osx_bootstrap
+	install_vim_plugins fish_completions osx_bootstrap
 	
 .PHONY: all dotfiles list_dotfiles download_git_submodules install \
-	fix_brew_permissions clean
+	fix_brew_permissions install_vim_plugins clean
 
 clean:
 	rm $(SYMLINKS)
