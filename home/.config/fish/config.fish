@@ -1,3 +1,5 @@
+set -x PATH /usr/local/sbin $PATH
+
 set -g fish_color_cwd white
 set -g fish_color_uneditable_cwd white
 
