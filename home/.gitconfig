@@ -1,7 +1,6 @@
 [user]
   name = Joel Chippindale
-  email = joel@joelchippindale.com
-  signingkey = 086675ED39DD7AC3
+  email = joel@unmade.com
 [core]
   excludesfile = ~/.gitignore
   editor = $(which vim)
@@ -45,4 +44,3 @@
 	autosquash = true
 [commit]
   verbose = true
-  gpgsign = true
