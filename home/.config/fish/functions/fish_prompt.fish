@@ -19,6 +19,13 @@ set -g __fish_git_prompt_color_invalidstate red -o
 set -g __fish_git_prompt_color_untrackedfiles $fish_color_normal
 set -g __fish_git_prompt_color_cleanstate green
 
+function git_initials --description 'The initials for who I am currently pairing with'
+  set -lx initials (git mob-print --initials)
+  if test -n "$initials"
+    printf ' [%s]' $initials
+  end
+end
+
 function fish_prompt --description 'Write out the prompt'
   printf '%s%s%s:' (set_color purple) (hostname|cut -d . -f 1) (set_color normal)
 
@@ -30,6 +37,8 @@ function fish_prompt --description 'Write out the prompt'
   end
 
   printf '%s' (__fish_git_prompt)
+
+  printf '%s%s' (set_color cyan -o) (git_initials)
 
   printf '%s $ %s' (set_color white -o) (set_color normal)
 end
