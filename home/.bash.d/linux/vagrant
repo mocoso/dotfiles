@@ -1,4 +1,0 @@
-# Put yourself in the standard directory if using vagrant
-if [[ `whoami` == "vagrant" ]]; then
-  cd /vagrant
-fi

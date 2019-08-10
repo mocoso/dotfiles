@@ -1,4 +1,0 @@
-alias la="ls -alG"
-
-# Alias for bundle exec
-alias be="bundle exec"
