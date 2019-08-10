@@ -20,7 +20,7 @@ set -g __fish_git_prompt_color_untrackedfiles $fish_color_normal
 set -g __fish_git_prompt_color_cleanstate green
 
 function git_initials --description 'The initials for who I am currently pairing with'
-  set -lx initials (git mob-print --initials)
+  set -lx initials (git mob-print --initials ^ /dev/null)
   if test -n "$initials"
     printf ' [%s]' $initials
   end
