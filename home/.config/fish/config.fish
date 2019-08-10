@@ -16,8 +16,6 @@ abbr dkud "docker-compose up -d"
 abbr dkl "docker-compose logs"
 abbr dke "docker-compose exec"
 abbr dkr "docker-compose run"
-abbr dkea "docker-compose exec app"
-abbr dkra "docker-compose run app"
 
 # git
 abbr gst "git status -sb"
