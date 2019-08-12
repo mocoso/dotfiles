@@ -2,7 +2,6 @@
 .DS_Store
 x_notes
 .project
-.vagrant
 .tmux-session.*
 .ruby-version
 tags
