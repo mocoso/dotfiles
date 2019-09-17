@@ -171,6 +171,8 @@ au FileType php setlocal softtabstop=4 tabstop=4 shiftwidth=4
 au FileType gitcommit setlocal spell spelllang=en_gb
 au FileType markdown setlocal spell spelllang=en_gb
 
+" automatically format python files with black on save
+autocmd BufWritePre *.py execute ':Black'
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
