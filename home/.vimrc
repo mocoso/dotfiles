@@ -97,6 +97,9 @@ set wildignore+=tags
 " Ignore image files
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif
 
+" Ignore OSX system files
+set wildignore+=.DS_Store
+
 ""
 "" Per project settings
 ""
