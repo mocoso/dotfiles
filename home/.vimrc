@@ -177,7 +177,9 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_user_command = {
   \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others']
+    \ 1: ['.git',
+    \   "cd %s && git ls-files --cached --exclude-standard --others |
+    \    grep -v '.\\(png\\|jpg\\|jpeg\\|pdf\\)$'"]
     \ },
   \ 'fallback': 'find %s -type f'
   \ }
