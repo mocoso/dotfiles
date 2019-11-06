@@ -95,14 +95,14 @@ set wildignore+=*.swp,*~,._*
 set wildignore+=tags
 
 " Ignore image files
- set wildignore+=*.png,*.jpg,*.jpeg,*.gif
+set wildignore+=*.png,*.jpg,*.jpeg,*.gif
 
 ""
 "" Per project settings
 ""
 
 " enable per-project .vimrc files
- set exrc
+set exrc
 " Only execute safe per-project vimrc commands
 set secure
 
