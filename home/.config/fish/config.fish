@@ -43,3 +43,7 @@ abbr grhh "git reset HEAD --hard"
 alias l="ls -alG"
 set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 
+# tmux
+# Kill all unattached sessions
+abbr tmku "tmux ls | grep : | grep -v '(attached)' | cut -d. -f1 | \
+  awk '{print substr(\$1, 0, length(\$1)-1)}' | xargs tmux kill-session -t"
