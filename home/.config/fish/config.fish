@@ -39,3 +39,10 @@ abbr grhh "git reset HEAD --hard"
 # ls
 alias l="ls -alG"
 set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
+
+# tmux
+function attach_to_or_create_new_tmux_session_for_current_directory
+  tmux attach -t $PWD || tmux new -s $PWD
+end
+
+alias tmd attach_to_or_create_new_tmux_session_for_current_directory
