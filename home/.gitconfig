@@ -10,6 +10,8 @@
   squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 	unstage = reset --
   upstream = push -u origin HEAD
+  delete-merged = !git branch --merged master | egrep -v \"(^\\*|^  master$)\" | xargs git branch --delete
+  delete-gone = !git fetch --prune && git branch --verbose | awk '/\\[gone]/{print $1}' |  xargs git branch --delete --force
 [color]
   diff = auto
   status = auto
