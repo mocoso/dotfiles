@@ -42,7 +42,11 @@ set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 
 # tmux
 function attach_to_or_create_new_tmux_session_for_current_directory
-  tmux attach -t $PWD || tmux new -s $PWD
+  if tmux has-session -t $PWD
+    tmux attach-session -t $PWD
+  else
+    tmux new-session -s $PWD
+  end
 end
 
 alias tmd attach_to_or_create_new_tmux_session_for_current_directory
