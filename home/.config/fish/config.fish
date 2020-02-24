@@ -41,11 +41,16 @@ alias l="ls -alG"
 set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 
 # tmux
+function sanitise_for_tmux_session_name
+  string replace '.' '' $argv
+end
+
 function attach_to_or_create_new_tmux_session_for_current_directory
-  if tmux has-session -t $PWD
-    tmux attach-session -t $PWD
+  set --local session_name (sanitise_for_tmux_session_name $PWD)
+  if tmux has-session -t $session_name
+    tmux attach-session -t $session_name
   else
-    tmux new-session -s $PWD
+    tmux new-session -s $session_name
   end
 end
 
