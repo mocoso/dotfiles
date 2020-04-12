@@ -38,19 +38,19 @@ then
   chsh -s /usr/local/bin/fish
 fi
 
+function ensure_ssh_option_is_off {
+  (cat /etc/ssh/sshd_config | grep -E "^$1 no" > /dev/null) ||
+    (
+      (sudo sed -i .bak "/^$1 yes/d" /etc/ssh/sshd_config) &&
+      echo "$1 no" | sudo tee -a /etc/ssh/sshd_config &&
+      sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist &&
+      sudo launchctl load /System/Library/LaunchDaemons/ssh.plist
+    )
+}
+
 echo " ---> Ensure ssh with password is disabled"
-(cat /etc/ssh/sshd_config | grep -E '^PasswordAuthentication no' > /dev/null) ||
-  (cat /etc/ssh/sshd_config | grep -E '^ChallengeResponseAuthentication no' > /dev/null) ||
-  exit_with_instructions "Disable ssh with passwords by
-
- - Adding (or uncommenting) 'PasswordAuthentication no' from /etc/ssh/sshd_config
-
- - Adding (or uncommenting) 'ChallengeResponseAuthentication no' from /etc/ssh/sshd_config
-
- - Restarting sshd with
-
-    sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
-    sudo launchctl load /System/Library/LaunchDaemons/ssh.plist"
+ensure_ssh_option_is_off 'PasswordAuthentication'
+ensure_ssh_option_is_off 'ChallengeResponseAuthentication'
 
 echo " ---> Disable the sound effects on boot"
 (nvram -d name SystemAudioVolume &> /dev/null) && sudo nvram -d SystemAudioVolume
