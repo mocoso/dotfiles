@@ -19,6 +19,8 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('henrik/vim-qargs')
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-unimpaired')
+call minpac#add('Quramy/tsuquyomi')
+call minpac#add('leafgarland/typescript-vim')
 
 " Load the plugins right now. (optional)
 "packloadall
