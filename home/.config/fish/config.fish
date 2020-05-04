@@ -19,7 +19,7 @@ abbr dkr "docker-compose run"
 
 # git
 abbr gst "git status -sb"
-abbr gup "git fetch && git rebase"
+abbr gup "git fetch && git rebase origin/master"
 abbr gpu "git push"
 abbr gc "git commit -v"
 abbr gca "git commit -v --amend"
