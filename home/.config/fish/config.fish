@@ -55,3 +55,31 @@ function attach_to_or_create_new_tmux_session_for_current_directory
 end
 
 alias tmd attach_to_or_create_new_tmux_session_for_current_directory
+
+# docker
+function docker-start
+  echo "-- Starting Docker.app, if necessary..."
+
+  open -g -a Docker.app || exit
+
+  # Wait for the server to start up, if applicable
+  printf 'Waiting for Docker to finish starting up...'
+
+  while ! docker system info &>/dev/null
+    printf '.'
+    sleep 1
+  end
+  printf '\n-- Docker is ready.'
+end
+
+
+function docker-stop
+  echo "-- Quitting Docker.app, if running..."
+
+  osascript -e 'tell application "Docker"
+    if it is running then quit it
+  end tell'
+
+  echo "-- Docker is stopped."
+  echo "Caveat: Restarting it too quickly can cause errors."
+end
