@@ -59,6 +59,8 @@ echo " ---> Screen Saver: Require password immediately after sleep or screen sav
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
+echo " ---> Screen Saver: Turn on after 1 hour"
+defaults -currentHost write com.apple.screensaver idleTime 3600
 
 echo " ---> Dock settings"
 
