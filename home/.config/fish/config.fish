@@ -58,6 +58,11 @@ end
 
 alias tmd attach_to_or_create_new_tmux_session_for_current_directory
 
+# brew
+function clean-upgrade
+  brew uninstall --ignore-dependencies $argv; and brew install $argv
+end
+
 # docker
 function docker-start
   echo "-- Starting Docker.app, if necessary..."
