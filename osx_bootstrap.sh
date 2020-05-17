@@ -52,74 +52,125 @@ echo " ---> Ensure ssh with password is disabled"
 ensure_ssh_option_is_off 'PasswordAuthentication'
 ensure_ssh_option_is_off 'ChallengeResponseAuthentication'
 
-echo " ---> Disable the sound effects on boot"
-(nvram -d name SystemAudioVolume &> /dev/null) && sudo nvram -d SystemAudioVolume
 
-echo " ---> Menu bar: disable transparency"
+echo " ---> Desktop & Screen Saver settings"
+
+echo " ---> Screen Saver: Require password immediately after sleep or screen saver begins"
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+
+echo " ---> Dock settings"
+
+echo " ---> Dock: Automatically hide and show"
+defaults write com.apple.dock autohide -bool true
+
+echo " ---> Dock: Move to left of screen"
+defaults write com.apple.dock orientation -string left
+
+
+echo " ---> Mission Control settings"
+
+echo " ---> Mission Control: Speed up animations"
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
+
+echo " ---> Software Update settings"
+
+echo " ---> Software Update: Check for updates daily, not just once per week"
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+
+echo " ---> Printer settings"
+
+echo " ---> Printer: Expand print panel by default"
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+echo " ---> Printer: Automatically quit printer app once the print jobs complete"
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+
+echo " ---> Keyboard settings"
+
+echo " ---> Keyboard: Set a blazingly fast repeat rate"
+defaults write NSGlobalDomain KeyRepeat -int 5
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+
+echo " ---> Trackpad settings"
+
+echo " ---> Trackpad: Setting speed to a reasonable number"
+defaults write -g com.apple.trackpad.scaling 2
+
+
+echo " ---> Mouse settings"
+
+echo " ---> Mouse: Setting speed to a reasonable number"
+defaults write -g com.apple.mouse.scaling 2.5
+
+
+echo " ---> Display settings"
+
+echo " ---> Display: Enable subpixel font rendering on non-Apple LCDs"
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
+
+echo " ---> Energy Saver settings"
+
+echo " ---> Energy Saver: Hide percentage in menu bar"
+defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+
+echo " ---> Energy Saver: show remaining battery time (on pre-10.8) in menu bar"
+defaults write com.apple.menuextra.battery ShowTime -string "YES"
+
+
+echo " ---> Time Machine settings"
+
+echo " ---> Time macine: Prevent from prompting to use new hard drives as backup volume"
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+
+echo " ---> Menu Bar settings"
+
+echo " ---> Menu Bar: disable transparency"
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
-echo " ---> Menu bar: show remaining battery time (on pre-10.8); hide percentage"
-defaults write com.apple.menuextra.battery ShowPercent -string "NO"
-defaults write com.apple.menuextra.battery ShowTime -string "YES"
+
+
+echo " ---> Finder settings"
+
+echo " ---> Finder: Show hidden files by default"
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+echo " ---> Finder: Show all filename extensions"
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+echo " ---> Finder: Show path bar"
+defaults write com.apple.finder ShowPathBar -bool true
+
+echo " ---> Finder: Disable the warning when changing a file extension"
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+echo " ---> Finder: Use column view in windows by default"
+defaults write com.apple.finder FXPreferredViewStyle -string "Clmv"
+
+echo " ---> Finder: Disable the warning before emptying the Trash"
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+echo " ---> Finder: Remove the spring loading delay for directories"
+defaults write NSGlobalDomain com.apple.springing.delay -float 0
+
+
+echo " ---> Miscelleneous settings"
+
+echo " ---> Disable the sound effects on boot"
+(nvram -d name SystemAudioVolume &> /dev/null) && sudo nvram -d SystemAudioVolume
 
 echo " ---> Disable opening and closing window animations"
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 echo " ---> Expand save panel by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-
-echo " ---> Expand print panel by default"
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-
-echo " ---> Automatically quit printer app once the print jobs complete"
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-echo " ---> Check for software updates daily, not just once per week"
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-
-echo " ---> Set a blazingly fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 5
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
-
-echo " ---> Enable subpixel font rendering on non-Apple LCDs"
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
-
-echo " ---> Require password immediately after sleep or screen saver begins"
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-echo " ---> Finder: show hidden files by default"
-defaults write com.apple.finder AppleShowAllFiles -bool true
-
-echo " ---> Finder: show all filename extensions"
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-echo " ---> Finder: show path bar"
-defaults write com.apple.finder ShowPathBar -bool true
-
-echo " ---> Disable the warning when changing a file extension"
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
-echo " ---> Use column view in all Finder windows by default"
-defaults write com.apple.finder FXPreferredViewStyle -string "Clmv"
-
-echo " ---> Disable the warning before emptying the Trash"
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-echo " ---> Remove the spring loading delay for directories"
-defaults write NSGlobalDomain com.apple.springing.delay -float 0
-
-echo " ---> Prevent Time Machine from prompting to use new hard drives as backup volume"
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-echo " ---> Automatically hide and show the Dock"
-defaults write com.apple.dock autohide -bool true
-
-echo " ---> Move Dock to left of screen"
-defaults write com.apple.dock orientation -string left
-
-echo " ---> Speed up Mission Control animations"
-defaults write com.apple.dock expose-animation-duration -float 0.1
 
 echo " ---> Disable dashboard"
 defaults write com.apple.dashboard mcx-disabled -boolean YES
@@ -128,9 +179,6 @@ echo " ---> Disable smart quotes and dashes"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-echo " ---> Setting trackpad & mouse speed to a reasonable number"
-defaults write -g com.apple.trackpad.scaling 2
-defaults write -g com.apple.mouse.scaling 2.5
 
 check_app_installed "Dropbox" "open https://www.dropbox.com; exit_with_instructions 'Install Dropbox from https://www.dropbox.com'"
 
