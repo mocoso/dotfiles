@@ -77,6 +77,12 @@ echo " ---> Mission Control: Speed up animations"
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
 
+echo " ---> Accessibility settings"
+
+echo " ---> Accessibility: Reduce transparency for Display"
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
+
 echo " ---> Software Update settings"
 
 echo " ---> Software Update: Check for updates daily, not just once per week"
@@ -130,13 +136,6 @@ echo " ---> Time Machine settings"
 
 echo " ---> Time macine: Prevent from prompting to use new hard drives as backup volume"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-
-echo " ---> Menu Bar settings"
-
-echo " ---> Menu Bar: disable transparency"
-defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
-
 
 
 echo " ---> Finder settings"
