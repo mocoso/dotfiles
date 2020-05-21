@@ -9,6 +9,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('ElmCast/elm-vim')
 call minpac#add('JuliaEditorSupport/julia-vim')
 call minpac#add('bling/vim-airline')
+call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('ervandew/supertab')
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
@@ -257,3 +258,6 @@ autocmd FileType sh set commentstring=#\ %s
 
 " Settings for fzf
 nnoremap <C-p> :GFiles<Cr>
+
+" settings for editorconfig-vim
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
