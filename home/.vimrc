@@ -39,6 +39,7 @@ set display+=lastline
 set autoread
 set autowrite
 set visualbell        " no more beeps
+set history=1000
 
 " Make Y consistent with C and D.  See :help Y.
 nnoremap Y y$
