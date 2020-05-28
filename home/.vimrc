@@ -167,7 +167,7 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 
 let mapleader = ","
 
-" Use extra symbols for PowerLine pagech fonts in airline
+" Use extra symbols for PowerLine fonts in airline
 let g:airline_powerline_fonts = 1
 
 set laststatus=2  " always show the status bar
