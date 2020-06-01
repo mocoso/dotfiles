@@ -15,6 +15,7 @@
   delete-gone = !git fetch --prune && git branch --verbose | awk '/\\[gone]/{print $1}' |  xargs git branch --delete --force
   tidy = !git delete-merged && git delete-gone
   log-changes-including = !git log -S
+  setup = !git init && touch README.md && git add README.md && git commit -m 'Initial commit'
 [color]
   diff = auto
   status = auto
