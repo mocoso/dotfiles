@@ -144,13 +144,13 @@ endfunction
 au FileType make setlocal noexpandtab
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
-au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake,*.thor} set ft=ruby
+au BufRead, BufNewFile {Gemfile,Rakefile,Capfile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake,*.thor} set ft=ruby
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown | call s:setupWrapping()
+au BufRead, BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown | call s:setupWrapping()
 
 " Treat JSON files like JavaScript
-au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile, BufRead *.json set ft=javascript
 
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
