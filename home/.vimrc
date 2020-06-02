@@ -116,7 +116,7 @@ set secure
 
 set backupdir=~/.vim/_backup//    " where to put backup files.
 set directory=~/.vim/_swap//      " where to put swap files.
-set directory=~/.vim/_undo//      " where to put undo files.
+set undodir=~/.vim/_undo//        " where to put undo files.
 
 ""
 "" Helpers
