@@ -152,6 +152,9 @@ au BufRead, BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown | call s:s
 " Treat JSON files like JavaScript
 au BufNewFile, BufRead *.json set ft=javascript
 
+" Treat ejs files like HTML
+au BufNewFile,BufRead *.ejs set ft=html
+
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
