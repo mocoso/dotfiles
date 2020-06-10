@@ -16,7 +16,6 @@ call minpac#add('tpope/vim-commentary')
 call minpac#add('rhysd/vim-crystal')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-fugitive')
-call minpac#add('henrik/vim-qargs')
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-unimpaired')
 
