@@ -1,5 +1,2 @@
 home/.vim/spell/
-home/.config/exercism
-home/.config/configstore
-home/.config/fish/fish_variables
-home/.config/sonic-pi.net
+home/.config/*
