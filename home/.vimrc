@@ -18,6 +18,7 @@ call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-unimpaired')
+call minpac#add('mustache/vim-mustache-handlebars')
 
 " Load the plugins right now. (optional)
 "packloadall
