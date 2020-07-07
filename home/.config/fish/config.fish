@@ -41,7 +41,7 @@ set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 
 # tmux
 function sanitise_for_tmux_session_name
-  string replace '.' '' $argv
+  string replace -a '.' '' $argv
 end
 
 function attach_to_or_create_new_tmux_session_for_current_directory
