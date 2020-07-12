@@ -11,7 +11,7 @@
   squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 	unstage = reset --
   upstream = push -u origin HEAD
-  reup = !git fetch && git rebase origin/$@
+  reup = !git fetch && git rebase origin/$((git config --get branch.default) || echo "master")
   delete-merged = !git branch --merged master | egrep -v \"(^\\*|^  master$)\" | xargs git branch --delete
   delete-gone = !git fetch --prune && git branch --verbose | awk '/\\[gone]/{print $1}' |  xargs git branch --delete --force
   tidy = !git delete-merged && git delete-gone
