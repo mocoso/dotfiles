@@ -67,3 +67,6 @@ set -gx FZF_DEFAULT_OPTS '--height 40%'
 # gcloud
 set -g -x "CLOUDSDK_PYTHON" "/usr/local/opt/python@3.8/libexec/bin/python"
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+
+# terraform
+set -g fish_user_paths "/usr/local/opt/terraform@0.12/bin" $fish_user_paths
