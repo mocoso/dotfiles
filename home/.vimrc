@@ -6,7 +6,6 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " add other plugins here.
-call minpac#add('kien/ctrlp.vim')
 call minpac#add('ElmCast/elm-vim')
 call minpac#add('JuliaEditorSupport/julia-vim')
 call minpac#add('ervandew/supertab')
@@ -19,6 +18,8 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('mustache/vim-mustache-handlebars')
+call minpac#add('junegunn/fzf')
+call minpac#add('junegunn/fzf.vim')
 
 " Load the plugins right now. (optional)
 "packloadall
@@ -179,23 +180,6 @@ let g:airline_powerline_fonts = 1
 
 set laststatus=2  " always show the status bar
 
-" Ctrl-P plugin
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-  \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
-  \ }
-
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git',
-    \   "cd %s && git ls-files --cached --exclude-standard --others |
-    \    grep -v '.\\(png\\|jpg\\|jpeg\\|pdf\\)$'"]
-    \ },
-  \ 'fallback': 'find %s -type f'
-  \ }
-
-let g:ctrlp_dotfiles = 1
-
 let g:syntastic_ignore_files = ['\.elm$']
 
 color vibrantink
@@ -269,3 +253,6 @@ set timeoutlen=1000 ttimeoutlen=0
 " Settings for vim-commentary
 autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType sh set commentstring=#\ %s
+
+" Settings for fzf
+nnoremap <C-p> :GFiles<Cr>
