@@ -87,3 +87,7 @@ function docker-stop
   echo "-- Docker is stopped."
   echo "Caveat: Restarting it too quickly can cause errors."
 end
+
+# fzf
+set -gx FZF_DEFAULT_COMMAND 'rg --files --hidden'
+set -gx FZF_DEFAULT_OPTS '--height 40%'
