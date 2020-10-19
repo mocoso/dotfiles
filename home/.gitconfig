@@ -5,6 +5,7 @@
 [core]
   excludesfile = ~/.gitignore
   editor = $(which vim)
+  attributesfile = ~/.gitattributes
 [alias]
   hist = log --pretty=format:\"%h %ad | %s%d\" --graph --date=short
   fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
