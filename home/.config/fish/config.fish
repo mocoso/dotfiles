@@ -60,34 +60,6 @@ function clean-upgrade
   brew uninstall --ignore-dependencies $argv; and brew install $argv
 end
 
-# docker
-function docker-start
-  echo "-- Starting Docker.app, if necessary..."
-
-  open -g -a Docker.app || exit
-
-  # Wait for the server to start up, if applicable
-  printf 'Waiting for Docker to finish starting up...'
-
-  while ! docker system info &>/dev/null
-    printf '.'
-    sleep 1
-  end
-  printf '\n-- Docker is ready.'
-end
-
-
-function docker-stop
-  echo "-- Quitting Docker.app, if running..."
-
-  osascript -e 'tell application "Docker"
-    if it is running then quit it
-  end tell'
-
-  echo "-- Docker is stopped."
-  echo "Caveat: Restarting it too quickly can cause errors."
-end
-
 # fzf
 set -gx FZF_DEFAULT_COMMAND 'rg --files --hidden'
 set -gx FZF_DEFAULT_OPTS '--height 40%'
