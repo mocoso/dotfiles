@@ -5,18 +5,16 @@ call minpac#init()
 " minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-" add other plugins here.
-call minpac#add('ElmCast/elm-vim')
-call minpac#add('JuliaEditorSupport/julia-vim')
+" language plugins
+call minpac#add('sheerun/vim-polyglot')
+
+" other plugins
 call minpac#add('bling/vim-airline')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('ervandew/supertab')
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
-call minpac#add('leafgarland/typescript-vim')
 call minpac#add('ludovicchabant/vim-gutentags')
-call minpac#add('mustache/vim-mustache-handlebars')
-call minpac#add('rhysd/vim-crystal')
 call minpac#add('scrooloose/syntastic')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-dispatch')
