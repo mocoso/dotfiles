@@ -258,6 +258,9 @@ set timeoutlen=1000 ttimeoutlen=0
 :nnoremap <S-Tab> :bprevious<CR>
 
 
+" Settings for coc
+set signcolumn=number
+
 " Settings for vim-commentary
 autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType sh set commentstring=#\ %s
