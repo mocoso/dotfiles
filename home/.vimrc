@@ -8,6 +8,9 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 " language plugins
 call minpac#add('sheerun/vim-polyglot')
 
+" color scheme plugins
+call minpac#add('ParamagicDev/vim-medic_chalk')
+
 " other plugins
 call minpac#add('bling/vim-airline')
 call minpac#add('editorconfig/editorconfig-vim')
@@ -183,11 +186,13 @@ set laststatus=2  " always show the status bar
 
 let g:syntastic_ignore_files = ['\.elm$']
 
-color vibrantink
+color medic_chalk
 
-highlight ColorColumn ctermbg=233 guibg=#121212
+highlight ColorColumn ctermbg=232 guibg=#121212
 let &colorcolumn=join(range(81,999),",")
-let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn="80,".join(range(998,999),",")
+
+highlight CursorLine ctermbg=233 cterm=NONE
 
 " Use underline on spelling mistakes
 hi clear SpellBad
