@@ -260,6 +260,11 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " Settings for coc
 set signcolumn=number
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-deno' ]
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Settings for vim-commentary
 autocmd FileType ruby set commentstring=#\ %s
