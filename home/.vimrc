@@ -173,9 +173,10 @@ au FileType markdown setlocal spell spelllang=en_gb
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
-au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
-  \| exe "normal! g`\"" | endif
-
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &filetype != "gitcommit"
+  \ |   exe "normal! g`\""
+  \ | endif
 
 let mapleader = ","
 
