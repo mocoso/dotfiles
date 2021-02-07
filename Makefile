@@ -63,4 +63,3 @@ install: $(OSX_BREW_INSTALL_BINARIES) download_git_submodules dotfiles \
 
 clean:
 	rm $(SYMLINKS)
-
