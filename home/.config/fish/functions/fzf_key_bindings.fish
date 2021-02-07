@@ -1,1 +1,1 @@
-/usr/local/opt/fzf/shell/key-bindings.fish
+/Users/mocoso/.nix-profile/share/fish/vendor_functions.d/fzf_key_bindings.fish
