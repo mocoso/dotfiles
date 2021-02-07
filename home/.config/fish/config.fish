@@ -1,5 +1,3 @@
-set -x PATH /usr/local/sbin $PATH
-
 set -x GPG_TTY (tty)
 
 set -g fish_color_cwd white
