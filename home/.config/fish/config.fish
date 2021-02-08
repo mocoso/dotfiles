@@ -56,3 +56,6 @@ alias tmd attach_to_or_create_new_tmux_session_for_current_directory
 # fzf
 set -gx FZF_DEFAULT_COMMAND 'rg --files --hidden'
 set -gx FZF_DEFAULT_OPTS '--height 40%'
+
+# nix
+any-nix-shell fish --info-right | source

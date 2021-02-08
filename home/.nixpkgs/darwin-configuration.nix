@@ -5,6 +5,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
     [
+      pkgs.any-nix-shell
       pkgs.ctags
       pkgs.docker
       pkgs.docker-compose
