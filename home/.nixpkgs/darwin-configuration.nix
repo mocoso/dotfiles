@@ -7,11 +7,13 @@
     [
       pkgs.any-nix-shell
       pkgs.ctags
+      pkgs.direnv
       pkgs.docker
       pkgs.docker-compose
       pkgs.fish
       pkgs.fzf
       pkgs.git
+      pkgs.lorri
       pkgs.pinentry-mac
       pkgs.tmux
       pkgs.tree
@@ -24,6 +26,7 @@
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
+  services.lorri.enable = true;
   # nix.package = pkgs.nix;
 
   # Create /etc/bashrc that loads the nix-darwin environment.

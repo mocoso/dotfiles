@@ -59,3 +59,6 @@ set -gx FZF_DEFAULT_OPTS '--height 40%'
 
 # nix
 any-nix-shell fish --info-right | source
+
+# lorri
+direnv hook fish | source
