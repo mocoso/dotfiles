@@ -13,6 +13,7 @@
       pkgs.git
       pkgs.gnupg
       pkgs.lorri
+      pkgs.nodejs
       pkgs.pinentry-mac
       pkgs.tmux
       pkgs.tree
