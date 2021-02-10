@@ -31,11 +31,11 @@ esac
 
 # fish
 echo " ---> Ensure using fish shell"
-(cat /etc/shells | grep /usr/local/bin/fish > /dev/null) || exit_with_instructions 'Add fish to allowed shells with by adding /usr/local/bin/fish to /etc/shells'
+(cat /etc/shells | grep fish > /dev/null) || exit_with_instructions 'Add fish to allowed shells with by adding `which fish` to /etc/shells'
 
-if [ "$SHELL" != "/usr/local/bin/fish" ]
+if ![[ $SHELL = *fish* ]]
 then
-  chsh -s /usr/local/bin/fish
+  chsh -s $(which fish)
 fi
 
 function ensure_ssh_option_is_off {
