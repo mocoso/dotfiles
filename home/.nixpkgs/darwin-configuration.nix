@@ -11,6 +11,7 @@
       pkgs.fish
       pkgs.fzf
       pkgs.git
+      pkgs.gnupg
       pkgs.lorri
       pkgs.pinentry-mac
       pkgs.tmux
