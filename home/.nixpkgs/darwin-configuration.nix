@@ -8,8 +8,6 @@
       pkgs.any-nix-shell
       pkgs.ctags
       pkgs.direnv
-      pkgs.docker
-      pkgs.docker-compose
       pkgs.fish
       pkgs.fzf
       pkgs.git
