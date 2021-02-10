@@ -62,3 +62,22 @@ any-nix-shell fish --info-right | source
 
 # lorri
 direnv hook fish | source
+
+# This ugly hack is required because the system oaths end up ahead of nix paths
+# when opening a tmux session in a nix shell
+function reorder_paths_in_nix_shell
+  if string length -q -- $IN_NIX_SHELL
+    set -l nix
+    set -l core
+    for p in $PATH
+      if string match -q '*nix*' $p
+        set -a nix $p
+      else
+        set -a core $p
+      end
+    end
+    set -U fish_user_paths $nix $core
+  end
+end
+
+reorder_paths_in_nix_shell
