@@ -1,6 +1,7 @@
 *.tmproj
 .DS_Store
-x_notes
 .project
 .ruby-version
+.vscode
 tags
+x_notes
