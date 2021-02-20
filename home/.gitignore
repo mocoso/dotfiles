@@ -1,7 +1,10 @@
 *.tmproj
 .DS_Store
+.envrc
 .project
 .ruby-version
 .vscode
+gemset.nix
+shell.nix
 tags
 x_notes
