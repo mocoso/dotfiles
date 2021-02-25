@@ -14,8 +14,8 @@
   upstream = push -u origin HEAD
   default-branch = !git config --get branch.default || echo \"master\"
   reup = !git fetch && git rebase origin/$(git default-branch)
-  delete-merged = !git branch --merged $(git default-branch) | egrep -v \"(^\\*|^  $(git default-branch)$)\" | xargs git branch --delete
-  delete-gone = !git fetch --prune && git branch --verbose | awk '/\\[gone]/{print $1}' |  xargs git branch --delete --force
+  delete-merged = !git branch --merged $(git default-branch) | egrep -v \"(^\\*|^  $(git default-branch)$)\" | xargs -r git branch --delete
+  delete-gone = !git fetch --prune && git branch --verbose | awk '/\\[gone]/{print $1}' | xargs -r git branch --delete --force
   tidy = !git delete-merged && git delete-gone
   log-changes-including = !git log -S
   setup = !git init && \
