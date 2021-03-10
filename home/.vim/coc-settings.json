@@ -2,6 +2,7 @@
   "tsserver.enableJavascript": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
+    "scss",
     "json",
     "markdown",
   ],
