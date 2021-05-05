@@ -12,7 +12,6 @@ call minpac#add('sheerun/vim-polyglot')
 call minpac#add('ParamagicDev/vim-medic_chalk')
 
 " other plugins
-call minpac#add('ParamagicDev/vim-medic_chalk')
 call minpac#add('bling/vim-airline')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('ervandew/supertab')
