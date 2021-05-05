@@ -68,3 +68,6 @@ set -gx FZF_DEFAULT_OPTS '--height 40%'
 # gcloud
 set -g -x "CLOUDSDK_PYTHON" "/usr/local/opt/python@3.8/libexec/bin/python"
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+
+# direnv
+direnv hook fish | source
