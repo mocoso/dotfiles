@@ -14,6 +14,7 @@
       pkgs.gnupg
       pkgs.lorri
       pkgs.nodejs
+      pkgs.openssl
       pkgs.pinentry-mac
       pkgs.tmux
       pkgs.tree
