@@ -1,7 +1,7 @@
 [user]
   name = Joel Chippindale
   email = joel@monkeysthumb.co.uk
-  signingkey = 14FE3C92C2880B41
+  signingkey = 0x14FE3C92C2880B41
 [core]
   excludesfile = ~/.gitignore
   editor = $(which vim)
