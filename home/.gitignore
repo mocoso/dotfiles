@@ -1,5 +1,6 @@
 *.tmproj
 .DS_Store
+.direnv
 .project
 .ruby-version
 .vscode
