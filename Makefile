@@ -20,7 +20,7 @@ list_dotfiles:
 ifeq ($(OS),Darwin)
 OSX_BREW_BIN_DIR := /usr/local/bin
 OSX_BREW_INSTALL := ctags git ruby-install fish reattach-to-user-namespace tmux \
-	tree vim ssh-copy-id
+	tree vim ssh-copy-id fzf
 OSX_BREW_INSTALL_BINARIES = $(addprefix $(OSX_BREW_BIN_DIR)/, $(OSX_BREW_INSTALL))
 OSX_BREW_BINARY = $(addprefix $(OSX_BREW_BIN_DIR)/, brew)
 
