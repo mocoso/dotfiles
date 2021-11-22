@@ -258,7 +258,7 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " Settings for coc
 set signcolumn=number
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-deno' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-deno', 'coc-html', 'coc-css', 'coc-elixir' ]
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)

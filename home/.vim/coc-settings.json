@@ -1,10 +1,21 @@
 {
   "deno.enable": true,
-  "tsserver.enableJavascript": false,
+  "tsserver.enableJavascript": true,
+	"eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
   "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
     "css",
     "scss",
+    "html",
     "json",
-    "markdown",
-  ],
+    "markdown"
+  ]
 }
