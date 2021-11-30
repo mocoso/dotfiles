@@ -24,6 +24,7 @@
     git add README.md && \
     git commit -m 'Initial commit' && \
     git config --add branch.default main
+  recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [color]
   diff = auto
   status = auto
