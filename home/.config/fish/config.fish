@@ -80,3 +80,10 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.in
 
 # direnv
 direnv hook fish | source
+
+# favicon & imagemagick
+function png2ico
+  convert $argv -define icon:auto-resize=64,48,32,16 favicon.ico
+
+  echo "Open favicon.ico with GIMP, and export to compress this to a reasonable size"
+end
