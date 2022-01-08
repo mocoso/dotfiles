@@ -39,7 +39,14 @@ abbr grh "git reset HEAD"
 abbr grhh "git reset HEAD --hard"
 
 # ls
-alias l="ls -alG"
+function l
+  if which -s exa
+    exa -al --git
+  else
+    ls -alG
+  end
+end
+
 set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 
 # tmux
