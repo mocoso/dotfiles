@@ -6,6 +6,7 @@
   excludesfile = ~/.gitignore
   editor = $(which vim)
   attributesfile = ~/.gitattributes
+  pager = "diff-so-fancy | less --tabs=4 -RFX"
 [alias]
   hist = log --pretty=format:\"%h %ad | %s%d\" --graph --date=short
   fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
