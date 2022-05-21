@@ -16,6 +16,7 @@
     "scss",
     "html",
     "json",
-    "markdown"
+    "markdown",
+    "yaml"
   ]
 }
