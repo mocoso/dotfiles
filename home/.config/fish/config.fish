@@ -1,4 +1,4 @@
-set -x PATH /usr/local/sbin $PATH
+set -x PATH /opt/homebrew/bin:/opt/homebrew/sbin $PATH
 
 set -x GPG_TTY (tty)
 
@@ -86,4 +86,9 @@ function png2ico
   convert $argv -define icon:auto-resize=64,48,32,16 favicon.ico
 
   echo "Open favicon.ico with GIMP, and export to compress this to a reasonable size"
+end
+
+function chrome-profile
+  set app "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  exec $app --enable-udd-profiles --user-data-dir="/Users/$USER/Library/Application Support/Google/Chrome/$argv"
 end
