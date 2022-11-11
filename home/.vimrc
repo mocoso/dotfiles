@@ -58,6 +58,7 @@ set shiftround                    " round to multiple of shiftwidth
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 set autoindent                    " autoindent to same level as previous line
+set nojoinspaces                  " ensure that lines are joined with a single space
 
 " List chars
 set listchars=""                  " Reset the listchars
