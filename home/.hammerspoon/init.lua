@@ -93,7 +93,32 @@ end)
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   local clockWidth = 250
+  setUpChatClock(clockWidth)
 
+  hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
+
+  local chrome = hs.window.focusedWindow():application()
+  chrome:selectMenuItem({"File", "New Window"});
+
+  local win = hs.window.focusedWindow()
+  positionChatWindow(clockWidth, win)
+end)
+
+hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
+  local clockWidth = 250
+  setUpChatClock(clockWidth)
+
+  local win = hs.window.find("Zoom Meeting")
+
+  if (win ~= nil)
+    then
+    positionChatWindow(clockWidth, win)
+  else
+  hs.alert.show("Open the Zoom Meeting first")
+  end
+end)
+
+function setUpChatClock(clockWidth)
   hs.application.launchOrFocus("Smart Countdown Timer")
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -103,19 +128,15 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   f.y = max.y
   f.w = clockWidth
   win:setFrame(f)
+end
 
-  hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
-
-  local chrome = hs.window.focusedWindow():application()
-  chrome:selectMenuItem({"File", "New Window"});
-
-  win = hs.window.focusedWindow()
-  f = win:frame()
-  max = win:screen():frame()
+function positionChatWindow(clockWidth, win)
+  local f = win:frame()
+  local max = win:screen():frame()
 
   f.x = max.x + (clockWidth * 5 / 8)
   f.y = max.y
   f.w = max.w - (clockWidth * 5 / 8)
   f.h = max.h / 2
   win:setFrame(f)
-end)
+end
