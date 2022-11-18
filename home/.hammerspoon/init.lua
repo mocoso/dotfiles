@@ -90,3 +90,32 @@ hs.hotkey.bind({"alt", "ctrl"}, ".", function()
   win:setFrame(f)
 end)
 -- End of windows
+
+hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
+  local clockWidth = 250
+
+  hs.application.launchOrFocus("Smart Countdown Timer")
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local max = win:screen():frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = clockWidth
+  win:setFrame(f)
+
+  hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
+
+  local chrome = hs.window.focusedWindow():application()
+  chrome:selectMenuItem({"File", "New Window"});
+
+  win = hs.window.focusedWindow()
+  f = win:frame()
+  max = win:screen():frame()
+
+  f.x = max.x + (clockWidth * 5 / 8)
+  f.y = max.y
+  f.w = max.w - (clockWidth * 5 / 8)
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
