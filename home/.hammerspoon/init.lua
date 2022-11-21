@@ -91,7 +91,10 @@ hs.hotkey.bind({"alt", "ctrl"}, ".", function()
 end)
 -- End of windows
 
+-- Video call
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
+  setDefaultAudioDevices()
+
   local clockWidth = 250
   setUpChatClock(clockWidth)
 
@@ -105,6 +108,8 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
 end)
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
+  setDefaultAudioDevices()
+
   local clockWidth = 250
   setUpChatClock(clockWidth)
 
@@ -117,6 +122,38 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
   hs.alert.show("Open the Zoom Meeting first")
   end
 end)
+
+function setFirstMatchingOutputDevice(outputNames)
+  for _, value in ipairs(outputNames)
+  do
+    local output = hs.audiodevice.findOutputByName(value)
+    if output ~= nil
+      then
+      output:setDefaultOutputDevice()
+      return
+    end
+  end
+end
+
+function setFirstMatchingInputDevice(inputNames)
+  for _, value in ipairs(inputNames)
+  do
+    local input = hs.audiodevice.findInputByName(value)
+    if input ~= nil
+      then
+      input:setDefaultOutputDevice()
+      return
+    end
+  end
+end
+
+function setDefaultAudioDevices()
+  local preferredOutputNames = { "OpenRun Pro by Shokz", "LG UltraFine Display Audio", "MacBook Pro Speakers" }
+  setFirstMatchingOutputDevice(preferredOutputNames)
+
+  local preferredInputNames = { "LG UltraFine Display Audio", "MacBook Pro Microphone"  }
+  setFirstMatchingInputDevice(preferredInputNames)
+end
 
 function setUpChatClock(clockWidth)
   hs.application.launchOrFocus("Smart Countdown Timer")
@@ -140,3 +177,4 @@ function positionChatWindow(clockWidth, win)
   f.h = max.h / 2
   win:setFrame(f)
 end
+-- end video call
