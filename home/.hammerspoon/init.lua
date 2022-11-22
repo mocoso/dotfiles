@@ -151,6 +151,12 @@ function setDefaultAudioDevices()
   local preferredOutputNames = { "OpenRun Pro by Shokz", "LG UltraFine Display Audio", "MacBook Pro Speakers" }
   setFirstMatchingOutputDevice(preferredOutputNames)
 
+  local output = hs.audiodevice.defaultOutputDevice()
+  if output:outputMuted()
+  then
+    output:setOutputMuted(false)
+  end
+
   local preferredInputNames = { "LG UltraFine Display Audio", "MacBook Pro Microphone"  }
   setFirstMatchingInputDevice(preferredInputNames)
 end
