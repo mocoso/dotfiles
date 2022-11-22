@@ -163,7 +163,8 @@ end
 
 function setUpChatClock(clockWidth)
   hs.application.launchOrFocus("Smart Countdown Timer")
-  local win = hs.window.focusedWindow()
+  local application = hs.application.find("Smart Countdown Timer")
+  local win = application:focusedWindow()
   local f = win:frame()
   local max = win:screen():frame()
 
