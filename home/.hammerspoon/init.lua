@@ -92,11 +92,12 @@ end)
 -- End of windows
 
 -- Video call
+
+CLOCK_WIDTH = 250
+
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   setDefaultAudioDevices()
-
-  local clockWidth = 250
-  setUpChatClock(clockWidth)
+  setUpChatClock()
 
   hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
 
@@ -104,20 +105,18 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   chrome:selectMenuItem({"File", "New Window"});
 
   local win = hs.window.focusedWindow()
-  positionChatWindow(clockWidth, win)
+  positionChatWindow(win)
 end)
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
   setDefaultAudioDevices()
-
-  local clockWidth = 250
-  setUpChatClock(clockWidth)
+  setUpChatClock()
 
   local win = hs.window.find("Zoom Meeting")
 
   if (win ~= nil)
   then
-    positionChatWindow(clockWidth, win)
+    positionChatWindow(win)
   else
     hs.alert.show("Open the Zoom Meeting first")
   end
@@ -161,7 +160,7 @@ function setDefaultAudioDevices()
   setFirstMatchingInputDevice(preferredInputNames)
 end
 
-function setUpChatClock(clockWidth)
+function setUpChatClock()
   hs.application.launchOrFocus("Smart Countdown Timer")
   local application = hs.application.find("Smart Countdown Timer")
   local win = application:focusedWindow()
@@ -170,17 +169,17 @@ function setUpChatClock(clockWidth)
 
   f.x = max.x
   f.y = max.y
-  f.w = clockWidth
+  f.w = CLOCK_WIDTH
   win:setFrame(f)
 end
 
-function positionChatWindow(clockWidth, win)
+function positionChatWindow(win)
   local f = win:frame()
   local max = win:screen():frame()
 
-  f.x = max.x + (clockWidth * 5 / 8)
+  f.x = max.x + (CLOCK_WIDTH * 5 / 8)
   f.y = max.y
-  f.w = max.w - (clockWidth * 5 / 8)
+  f.w = max.w - (CLOCK_WIDTH * 5 / 8)
   f.h = max.h / 2
   win:setFrame(f)
 end
