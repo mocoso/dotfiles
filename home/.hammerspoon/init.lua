@@ -116,10 +116,10 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
   local win = hs.window.find("Zoom Meeting")
 
   if (win ~= nil)
-    then
+  then
     positionChatWindow(clockWidth, win)
   else
-  hs.alert.show("Open the Zoom Meeting first")
+    hs.alert.show("Open the Zoom Meeting first")
   end
 end)
 
@@ -128,7 +128,7 @@ function setFirstMatchingOutputDevice(outputNames)
   do
     local output = hs.audiodevice.findOutputByName(value)
     if output ~= nil
-      then
+    then
       output:setDefaultOutputDevice()
       return
     end
@@ -140,7 +140,7 @@ function setFirstMatchingInputDevice(inputNames)
   do
     local input = hs.audiodevice.findInputByName(value)
     if input ~= nil
-      then
+    then
       input:setDefaultOutputDevice()
       return
     end
