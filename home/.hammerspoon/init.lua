@@ -162,6 +162,10 @@ end
 
 function setUpChatClock()
   hs.application.launchOrFocus("Smart Countdown Timer")
+  hs.timer.doAfter(0.2, positionChatClock)
+end
+
+function positionChatClock()
   local application = hs.application.find("Smart Countdown Timer")
   local win = application:focusedWindow()
   local f = win:frame()
