@@ -156,7 +156,7 @@ function setDefaultAudioDevices()
     output:setOutputMuted(false)
   end
 
-  local preferredInputNames = { "LG UltraFine Display Audio", "MacBook Pro Microphone"  }
+  local preferredInputNames = { "Shure MV7", "LG UltraFine Display Audio", "MacBook Pro Microphone"  }
   setFirstMatchingInputDevice(preferredInputNames)
 end
 
