@@ -140,7 +140,7 @@ function setFirstMatchingInputDevice(inputNames)
     local input = hs.audiodevice.findInputByName(value)
     if input ~= nil
     then
-      input:setDefaultOutputDevice()
+      input:setDefaultInputDevice()
       return
     end
   end
