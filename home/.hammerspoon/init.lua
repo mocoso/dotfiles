@@ -98,6 +98,7 @@ CLOCK_WIDTH = 250
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   setDefaultAudioDevices()
   setUpChatClock()
+  setUpVideo();
 
   hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
 
@@ -111,6 +112,7 @@ end)
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
   setDefaultAudioDevices()
   setUpChatClock()
+  setUpVideo();
 
   local win = hs.window.find("Zoom Meeting")
 
@@ -187,4 +189,12 @@ function positionChatWindow(win)
   f.h = max.h / 2
   win:setFrame(f)
 end
+
+function setUpVideo()
+  if hs.application.get("OBS") == nil
+  then
+    os.execute("/Applications/OBS.app/Contents/MacOS/OBS --startvirtualcam &")
+  end
+end
+
 -- end video call
