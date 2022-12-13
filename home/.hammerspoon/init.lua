@@ -96,9 +96,8 @@ end)
 CLOCK_WIDTH = 250
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
-  setDefaultAudioDevices()
+  setUpAudioVideoForCall()
   setUpChatClock()
-  setUpVideo();
 
   hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
 
@@ -110,9 +109,8 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
 end)
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
-  setDefaultAudioDevices()
+  setUpAudioVideoForCall()
   setUpChatClock()
-  setUpVideo();
 
   local win = hs.window.find("Zoom Meeting")
 
@@ -123,6 +121,11 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
     hs.alert.show("Open the Zoom Meeting first")
   end
 end)
+
+function setUpAudioVideoForCall()
+  setDefaultAudioDevices()
+  setUpVideo();
+end
 
 function setFirstMatchingOutputDevice(outputNames)
   for _, value in ipairs(outputNames)
