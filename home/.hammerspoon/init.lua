@@ -94,6 +94,8 @@ end)
 -- Video call
 
 CLOCK_WIDTH = 250
+CLOCK_APP_NAME = "Smart Countdown Timer"
+OBS_APP_NAME = "OBS Studio"
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   setUpAudioVideoForCall()
@@ -119,6 +121,26 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
     positionChatWindow(win)
   else
     hs.alert.show("Open the Zoom Meeting first")
+  end
+end)
+
+hs.hotkey.bind({"alt", "ctrl", "cmd"}, "E", function()
+  local clock = hs.application.get(CLOCK_APP_NAME)
+  if clock ~= nil
+  then
+    clock:kill()
+  end
+
+  local obs = hs.application.get(OBS_APP_NAME)
+  if obs ~= nil
+  then
+    obs:kill9()
+  end
+
+  local input = hs.audiodevice.defaultInputDevice()
+  if not input:inputMuted()
+  then
+    input:setInputMuted(true)
   end
 end)
 
@@ -172,12 +194,12 @@ function setDefaultAudioDevices()
 end
 
 function setUpChatClock()
-  hs.application.launchOrFocus("Smart Countdown Timer")
+  hs.application.launchOrFocus(CLOCK_APP_NAME)
   hs.timer.doAfter(0.2, positionChatClock)
 end
 
 function positionChatClock()
-  local application = hs.application.find("Smart Countdown Timer")
+  local application = hs.application.find(CLOCK_APP_NAME)
   local win = application:focusedWindow()
   local f = win:frame()
   local max = win:screen():frame()
@@ -200,7 +222,7 @@ function positionChatWindow(win)
 end
 
 function setUpVideo()
-  if hs.application.get("OBS") == nil
+  if hs.application.get(OBS_APP_NAME) == nil
   then
     os.execute("/Applications/OBS.app/Contents/MacOS/OBS --startvirtualcam &")
   end
