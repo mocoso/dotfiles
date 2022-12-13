@@ -94,8 +94,8 @@ end)
 -- Video call
 
 CLOCK_WIDTH = 250
-CLOCK_APP_NAME = "Smart Countdown Timer"
-OBS_APP_NAME = "OBS Studio"
+CLOCK_APP_BUNDLE_ID = "com.fiplab.smartcountdowntimer"
+OBS_APP_BUNDLE_ID = "com.obsproject.obs-studio"
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   setUpAudioVideoForCall()
@@ -125,13 +125,13 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
 end)
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "E", function()
-  local clock = hs.application.get(CLOCK_APP_NAME)
+  local clock = hs.application.get(CLOCK_APP_BUNDLE_ID)
   if clock ~= nil
   then
     clock:kill()
   end
 
-  local obs = hs.application.get(OBS_APP_NAME)
+  local obs = hs.application.get(OBS_APP_BUNDLE_ID)
   if obs ~= nil
   then
     obs:kill9()
@@ -194,13 +194,8 @@ function setDefaultAudioDevices()
 end
 
 function setUpChatClock()
-  hs.application.launchOrFocus(CLOCK_APP_NAME)
-  hs.timer.doAfter(0.2, positionChatClock)
-end
-
-function positionChatClock()
-  local application = hs.application.find(CLOCK_APP_NAME)
-  local win = application:focusedWindow()
+  local clock = hs.application.open(CLOCK_APP_BUNDLE_ID, 5, true)
+  local win = clock:focusedWindow()
   local f = win:frame()
   local max = win:screen():frame()
 
@@ -222,7 +217,7 @@ function positionChatWindow(win)
 end
 
 function setUpVideo()
-  if hs.application.get(OBS_APP_NAME) == nil
+  if hs.application.get(OBS_APP_BUNDLE_ID) == nil
   then
     os.execute("/Applications/OBS.app/Contents/MacOS/OBS --startvirtualcam &")
   end
