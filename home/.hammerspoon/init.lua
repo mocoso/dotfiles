@@ -163,6 +163,12 @@ function setDefaultAudioDevices()
 
   local preferredInputNames = { "Shure MV7", "LG UltraFine Display Audio", "MacBook Pro Microphone"  }
   setFirstMatchingInputDevice(preferredInputNames)
+
+  local input = hs.audiodevice.defaultInputDevice()
+  if input:inputMuted()
+  then
+    input:setInputMuted(false)
+  end
 end
 
 function setUpChatClock()
