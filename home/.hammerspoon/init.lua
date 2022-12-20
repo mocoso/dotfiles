@@ -5,9 +5,9 @@ hs.hotkey.bind({"alt", "ctrl"}, "I", function()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.x = max.x
+  f.x = max.x + clockOffset()
   f.y = max.y
-  f.w = max.w
+  f.w = max.w - clockOffset()
   f.h = max.h / 2
   win:setFrame(f)
 end)
@@ -31,9 +31,9 @@ hs.hotkey.bind({"alt", "ctrl"}, "K", function()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.x = max.x
+  f.x = max.x + clockOffset()
   f.y = max.y
-  f.w = max.w
+  f.w = max.w - clockOffset()
   f.h = max.h
   win:setFrame(f)
 end)
@@ -205,13 +205,22 @@ function setUpChatClock()
   win:setFrame(f)
 end
 
+function clockOffset()
+  if hs.application.find(CLOCK_APP_BUNDLE_ID)
+  then
+    return CLOCK_WIDTH * 5 / 8
+  else
+    return 0
+  end
+end
+
 function positionChatWindow(win)
   local f = win:frame()
   local max = win:screen():frame()
 
-  f.x = max.x + (CLOCK_WIDTH * 5 / 8)
+  f.x = max.x + clockOffset()
   f.y = max.y
-  f.w = max.w - (CLOCK_WIDTH * 5 / 8)
+  f.w = max.w - clockOffset()
   f.h = max.h / 2
   win:setFrame(f)
 end
