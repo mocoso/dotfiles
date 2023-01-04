@@ -4,5 +4,6 @@
 .project
 .ruby-version
 .vscode
+.vim
 tags
 x_notes
