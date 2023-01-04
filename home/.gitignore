@@ -1,6 +1,7 @@
 *.tmproj
 .DS_Store
 .direnv
+.obsidian
 .project
 .ruby-version
 .vscode
