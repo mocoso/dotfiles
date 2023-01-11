@@ -98,7 +98,8 @@ CLOCK_APP_BUNDLE_ID = "com.fiplab.smartcountdowntimer"
 OBS_APP_BUNDLE_ID = "com.obsproject.obs-studio"
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
-  setUpAudioVideoForCall()
+  setDefaultAudioDevices()
+  setUpVideo("Google");
   setUpChatClock()
 
   hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
@@ -111,7 +112,8 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
 end)
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
-  setUpAudioVideoForCall()
+  setDefaultAudioDevices()
+  setUpVideo("Zoom");
   setUpChatClock()
 
   local win = hs.window.find("Zoom Meeting")
@@ -143,11 +145,6 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "E", function()
     input:setInputMuted(true)
   end
 end)
-
-function setUpAudioVideoForCall()
-  setDefaultAudioDevices()
-  setUpVideo();
-end
 
 function setFirstMatchingOutputDevice(outputNames)
   for _, value in ipairs(outputNames)
@@ -225,10 +222,13 @@ function positionChatWindow(win)
   win:setFrame(f)
 end
 
-function setUpVideo()
+function setUpVideo(callType)
   if hs.application.get(OBS_APP_BUNDLE_ID) == nil
   then
-    os.execute("/Applications/OBS.app/Contents/MacOS/OBS --startvirtualcam &")
+    local scene = callType == "Google" and "GM-Monitor" or "Monitor"
+    local execute = "/Applications/OBS.app/Contents/MacOS/OBS --startvirtualcam --scene \"" .. scene .. "\" &"
+
+    os.execute(execute)
   end
 end
 
