@@ -97,7 +97,7 @@ CLOCK_WIDTH = 250
 CLOCK_APP_BUNDLE_ID = "com.fiplab.smartcountdowntimer"
 OBS_APP_BUNDLE_ID = "com.obsproject.obs-studio"
 
-hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
+hs.hotkey.bind({"alt", "ctrl", "cmd"}, "G", function()
   setDefaultAudioDevices()
   setUpVideo("Google");
   setUpChatClock()
@@ -124,6 +124,20 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
   else
     hs.alert.show("Open the Zoom Meeting first")
   end
+end)
+
+hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
+  setDefaultAudioDevices()
+  setUpVideo("Unknown");
+  setUpChatClock()
+
+  hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
+
+  local chrome = hs.window.focusedWindow():application()
+  chrome:selectMenuItem({"File", "New Window"});
+
+  local win = hs.window.focusedWindow()
+  positionChatWindow(win)
 end)
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "E", function()
