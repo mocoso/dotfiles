@@ -116,6 +116,7 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
   setUpVideo("Zoom");
   setUpChatClock()
 
+  hs.application.launchOrFocus("zoom.us")
   local win = hs.window.find("Zoom Meeting")
 
   if (win ~= nil)
