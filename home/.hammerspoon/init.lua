@@ -248,3 +248,9 @@ function setUpVideo(callType)
 end
 
 -- end video call
+
+
+hs.hotkey.bind({"alt", "ctrl", "cmd"}, "W", function()
+  local focussedApp = hs.window.focusedWindow():application()
+  hs.alert.show(focussedApp:name())
+end)
