@@ -1,5 +1,5 @@
 -- Windows
-hs.hotkey.bind({"alt", "ctrl"}, "I", function()
+hs.hotkey.bind({"alt", "ctrl"}, "U", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -7,7 +7,33 @@ hs.hotkey.bind({"alt", "ctrl"}, "I", function()
 
   f.x = max.x + clockOffset()
   f.y = max.y
+  f.w = (max.w / 2) - clockOffset()
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
+hs.hotkey.bind({"alt", "ctrl"}, "I", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x + clockOffset()
+  f.y = max.y / 2
   f.w = max.w - clockOffset()
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
+hs.hotkey.bind({"alt", "ctrl"}, "O", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x + max.w / 2
+  f.y = max.y
+  f.w = (max.w /2) - clockOffset()
   f.h = max.h / 2
   win:setFrame(f)
 end)
