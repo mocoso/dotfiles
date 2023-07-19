@@ -5,9 +5,9 @@ hs.hotkey.bind({"alt", "ctrl"}, "U", function()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.x = max.x + clockOffset()
+  f.x = max.x + clockOffset(screen)
   f.y = max.y
-  f.w = (max.w / 2) - clockOffset()
+  f.w = (max.w / 2) - clockOffset(screen)
   f.h = max.h / 2
   win:setFrame(f)
 end)
@@ -18,9 +18,9 @@ hs.hotkey.bind({"alt", "ctrl"}, "I", function()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.x = max.x + clockOffset()
+  f.x = max.x + clockOffset(screen)
   f.y = max.y / 2
-  f.w = max.w - clockOffset()
+  f.w = max.w - clockOffset(screen)
   f.h = max.h / 2
   win:setFrame(f)
 end)
@@ -44,9 +44,9 @@ hs.hotkey.bind({"alt", "ctrl"}, "J", function()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.x = max.x
+  f.x = max.x + clockOffset(screen)
   f.y = max.y
-  f.w = max.w / 2
+  f.w = (max.w /2) - clockOffset(screen)
   f.h = max.h
   win:setFrame(f)
 end)
@@ -57,9 +57,9 @@ hs.hotkey.bind({"alt", "ctrl"}, "K", function()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.x = max.x + clockOffset()
+  f.x = max.x + clockOffset(screen)
   f.y = max.y
-  f.w = max.w - clockOffset()
+  f.w = max.w - clockOffset(screen)
   f.h = max.h
   win:setFrame(f)
 end)
@@ -243,8 +243,9 @@ function setUpChatClock()
   win:setFrame(f)
 end
 
-function clockOffset()
-  if hs.application.find(CLOCK_APP_BUNDLE_ID)
+function clockOffset(screen)
+  local clock = hs.application.find(CLOCK_APP_BUNDLE_ID)
+  if clock and clock:focusedWindow() and clock:focusedWindow():screen() == screen
   then
     return CLOCK_WIDTH * 5 / 8
   else
