@@ -33,7 +33,7 @@ hs.hotkey.bind({"alt", "ctrl"}, "O", function()
 
   f.x = max.x + max.w / 2
   f.y = max.y
-  f.w = (max.w /2) - clockOffset()
+  f.w = max.w / 2
   f.h = max.h / 2
   win:setFrame(f)
 end)
