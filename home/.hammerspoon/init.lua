@@ -258,7 +258,7 @@ function setUpChatClock()
 end
 
 function clockOffset(screen)
-  local clock = hs.application.find(CLOCK_APP_BUNDLE_ID)
+  local clock = hs.application.applicationsForBundleID(CLOCK_APP_BUNDLE_ID)[1]
   if clock and clock:focusedWindow() and clock:focusedWindow():screen() == screen
   then
     return CLOCK_WIDTH * 5 / 8
