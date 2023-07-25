@@ -4,10 +4,11 @@ hs.hotkey.bind({"alt", "ctrl"}, "U", function()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
+  local clockOffset = clockOffset(screen)
 
-  f.x = max.x + clockOffset(screen)
+  f.x = max.x + clockOffset
   f.y = max.y
-  f.w = (max.w / 2) - clockOffset(screen)
+  f.w = (max.w / 2) - clockOffset
   f.h = max.h / 2
   win:setFrame(f)
 end)
@@ -17,10 +18,11 @@ hs.hotkey.bind({"alt", "ctrl"}, "I", function()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
+  local clockOffset = clockOffset(screen)
 
-  f.x = max.x + clockOffset(screen)
+  f.x = max.x + clockOffset
   f.y = max.y / 2
-  f.w = max.w - clockOffset(screen)
+  f.w = max.w - clockOffset
   f.h = max.h / 2
   win:setFrame(f)
 end)
@@ -43,10 +45,11 @@ hs.hotkey.bind({"alt", "ctrl"}, "J", function()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
+  local clockOffset = clockOffset(screen)
 
-  f.x = max.x + clockOffset(screen)
+  f.x = max.x + clockOffset
   f.y = max.y
-  f.w = (max.w /2) - clockOffset(screen)
+  f.w = (max.w / 2) - clockOffset
   f.h = max.h
   win:setFrame(f)
 end)
@@ -56,10 +59,11 @@ hs.hotkey.bind({"alt", "ctrl"}, "K", function()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
+  local clockOffset = clockOffset(screen)
 
-  f.x = max.x + clockOffset(screen)
+  f.x = max.x + clockOffset
   f.y = max.y
-  f.w = max.w - clockOffset(screen)
+  f.w = max.w - clockOffset
   f.h = max.h
   win:setFrame(f)
 end)
@@ -267,10 +271,11 @@ function positionChatWindow(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
+  local clockOffset = clockOffset(screen)
 
-  f.x = max.x + clockOffset(screen)
+  f.x = max.x + clockOffset
   f.y = max.y
-  f.w = max.w - clockOffset(screen)
+  f.w = max.w - clockOffset
   f.h = max.h / 2
   win:setFrame(f)
 end
