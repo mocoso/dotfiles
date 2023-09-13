@@ -303,4 +303,5 @@ end
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "W", function()
   local focussedApp = hs.window.focusedWindow():application()
   hs.alert.show(focussedApp:name())
+  hs.alert.show(focussedApp:bundleID())
 end)
