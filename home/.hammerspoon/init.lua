@@ -126,13 +126,14 @@ end)
 CLOCK_WIDTH = 250
 CLOCK_APP_BUNDLE_ID = "com.fiplab.smartcountdowntimer"
 OBS_APP_BUNDLE_ID = "com.obsproject.obs-studio"
+GOOGLE_MEET_APPLICATION_NAME = "Google Chrome Monkeys Thumb"
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "G", function()
   setDefaultAudioDevices()
   setUpVideo("Google");
   setUpChatClock()
 
-  hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
+  hs.application.launchOrFocus(GOOGLE_MEET_APPLICATION_NAME)
 
   local chrome = hs.window.focusedWindow():application()
   chrome:selectMenuItem({"File", "New Window"});
@@ -162,7 +163,7 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   setUpVideo("Unknown");
   setUpChatClock()
 
-  hs.application.launchOrFocus("Google Chrome Monkeys Thumb")
+  hs.application.launchOrFocus(GOOGLE_MEET_APPLICATION_NAME)
 
   local chrome = hs.window.focusedWindow():application()
   chrome:selectMenuItem({"File", "New Window"});
