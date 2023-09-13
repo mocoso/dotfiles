@@ -200,6 +200,12 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "E", function()
   then
     input:setInputMuted(true)
   end
+
+  local google_meet_app = hs.application.get("com.google.Chrome")
+  if google_meet_app ~= nil
+  then
+    google_meet_app:kill()
+  end
 end)
 
 function setFirstMatchingOutputDevice(outputNames)
