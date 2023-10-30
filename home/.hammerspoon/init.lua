@@ -127,11 +127,13 @@ CLOCK_WIDTH = 250
 CLOCK_APP_BUNDLE_ID = "com.fiplab.smartcountdowntimer"
 OBS_APP_BUNDLE_ID = "com.obsproject.obs-studio"
 GOOGLE_MEET_APPLICATION_NAME = "Google Chrome Monkeys Thumb"
+LIGHT_ON = false
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "G", function()
   setDefaultAudioDevices()
   setUpVideo("Google");
   setUpChatClock()
+  switchElgatoLight(true)
 
   hs.application.launchOrFocus(GOOGLE_MEET_APPLICATION_NAME)
 
@@ -146,6 +148,7 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
   setDefaultAudioDevices()
   setUpVideo("Zoom");
   setUpChatClock()
+  switchElgatoLight(true)
 
   hs.application.launchOrFocus("zoom.us")
   local win = hs.window.find("Zoom Meeting")
@@ -162,6 +165,7 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   setDefaultAudioDevices()
   setUpVideo("Unknown");
   setUpChatClock()
+  switchElgatoLight(true)
 
   hs.application.launchOrFocus(GOOGLE_MEET_APPLICATION_NAME)
 
@@ -208,6 +212,11 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "E", function()
   end
 end)
 
+
+hs.hotkey.bind({"alt", "ctrl", "cmd"}, "L", function()
+  toggleElgatoLight()
+end)
+
 function setFirstMatchingOutputDevice(outputNames)
   for _, value in ipairs(outputNames)
   do
@@ -230,6 +239,26 @@ function setFirstMatchingInputDevice(inputNames)
       return
     end
   end
+end
+
+function switchElgatoLight(on)
+  value = on and "1" or "0"
+  hs.http.asyncPut(
+    "http://elgato-key-light-7d0f.local:9123/elgato/lights",
+    string.gsub("{\"lights\": [{\"on\": $value}]}", "$value", value),
+    { ["Content-Type"] = "application/json" },
+    dummyCallback
+  )
+
+  LIGHT_ON = on
+end
+
+function dummyCallback(httpResponse, string, headers)
+end
+
+function toggleElgatoLight()
+  value = not LIGHT_ON
+  switchElgatoLight(value)
 end
 
 function setDefaultAudioDevices()
