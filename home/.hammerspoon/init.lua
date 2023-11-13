@@ -196,7 +196,7 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "E", function()
   local obs = hs.application.get(OBS_APP_BUNDLE_ID)
   if obs ~= nil
   then
-    obs:kill9()
+    obs:kill()
   end
 
   local input = hs.audiodevice.defaultInputDevice()
