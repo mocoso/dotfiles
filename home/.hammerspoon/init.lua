@@ -153,7 +153,7 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "Z", function()
   setUpChatClock()
   switchElgatoLight(true)
 
-  hs.application.launchOrFocus("zoom.us")
+  hs.application.open("zoom.us", 5, true)
   local win = hs.window.find("Zoom Meeting")
 
   if (win ~= nil)
