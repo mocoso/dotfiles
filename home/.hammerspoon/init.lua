@@ -126,7 +126,7 @@ end)
 CLOCK_WIDTH = 250
 CLOCK_APP_BUNDLE_ID = "com.fiplab.smartcountdowntimer"
 OBS_APP_BUNDLE_ID = "com.obsproject.obs-studio"
-GOOGLE_MEET_APPLICATION_NAME = "Google Chrome Monkeys Thumb"
+GOOGLE_MEET_BUNDLE_ID = "com.google.Chrome"
 LIGHT_ON = false
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "G", function()
@@ -135,12 +135,15 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "G", function()
   setUpChatClock()
   switchElgatoLight(true)
 
-  hs.application.launchOrFocus(GOOGLE_MEET_APPLICATION_NAME)
-
-  local chrome = hs.window.focusedWindow():application()
-  chrome:selectMenuItem({"File", "New Window"});
+  local chrome = hs.application.open(GOOGLE_MEET_BUNDLE_ID, 5, true)
 
   local win = hs.window.focusedWindow()
+  if win == nil
+  then
+    chrome:selectMenuItem({"File", "New Window"});
+    win = hs.window.focusedWindow()
+  end
+
   positionChatWindow(win)
 end)
 
@@ -167,12 +170,15 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "M", function()
   setUpChatClock()
   switchElgatoLight(true)
 
-  hs.application.launchOrFocus(GOOGLE_MEET_APPLICATION_NAME)
-
-  local chrome = hs.window.focusedWindow():application()
-  chrome:selectMenuItem({"File", "New Window"});
+  local chrome = hs.application.open(GOOGLE_MEET_BUNDLE_ID, 5, true)
 
   local win = hs.window.focusedWindow()
+  if win == nil
+  then
+    chrome:selectMenuItem({"File", "New Window"});
+    win = hs.window.focusedWindow()
+  end
+
   positionChatWindow(win)
 end)
 
@@ -205,7 +211,7 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "E", function()
     input:setInputMuted(true)
   end
 
-  local google_meet_app = hs.application.get("com.google.Chrome")
+  local google_meet_app = hs.application.get(GOOGLE_MEET_BUNDLE_ID)
   if google_meet_app ~= nil
   then
     google_meet_app:kill()
