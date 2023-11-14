@@ -323,13 +323,7 @@ function positionChatWindow(win)
 end
 
 function setUpVideo(callType)
-  if hs.application.get(OBS_APP_BUNDLE_ID) == nil
-  then
-    local scene = callType == "Google" and "GM-Monitor" or "Monitor"
-    local execute = "/Applications/OBS.app/Contents/MacOS/OBS --startvirtualcam --scene \"" .. scene .. "\" &"
-
-    os.execute(execute)
-  end
+  hs.application.open(OBS_APP_BUNDLE_ID)
 end
 
 -- end video call
