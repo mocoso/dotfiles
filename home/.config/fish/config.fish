@@ -93,3 +93,11 @@ function chrome-profile
   set app "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
   exec $app --enable-udd-profiles --user-data-dir="/Users/$USER/Library/Application Support/Google/Chrome/$argv"
 end
+
+function remarkable-auto-sleep-long
+  ssh remarkable sed -i 's/IdleSuspendDelay=.*$/IdleSuspendDelay=24000000/' /etc/remarkable.conf
+end
+
+function remarkable-auto-sleep-off
+  ssh remarkable sed -i 's/IdleSuspendDelay=.*$/IdleSuspendDelay=0/' /etc/remarkable.conf
+end
