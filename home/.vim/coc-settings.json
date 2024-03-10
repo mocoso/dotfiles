@@ -17,6 +17,7 @@
     "html",
     "json",
     "markdown",
+    "toml",
     "yaml"
   ]
 }
