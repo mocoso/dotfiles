@@ -193,6 +193,8 @@ hs.hotkey.bind({"alt", "ctrl", "cmd"}, "C", function()
 end)
 
 hs.hotkey.bind({"alt", "ctrl", "cmd"}, "E", function()
+  switchElgatoLight(false)
+
   local clock = hs.application.get(CLOCK_APP_BUNDLE_ID)
   if clock ~= nil
   then
